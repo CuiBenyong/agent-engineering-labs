@@ -1,0 +1,91 @@
+{
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "backend": "mock-hash(384)",
+  "reranker": "mock-overlap",
+  "store": "memory（内存索引 + 全表扫描）",
+  "global": {
+    "answerable": 21,
+    "shouldRefuse": 19,
+    "singleCount": 17,
+    "multiCount": 4,
+    "recall": 0.9524,
+    "recallSingle": 1,
+    "recallMulti": 0.75,
+    "ndcg": 0.6732,
+    "abstainRate": 0.1579,
+    "avgContextTokens": 445,
+    "citationRejects": 1
+  },
+  "tenants": [
+    {
+      "tenantId": "t-yunti",
+      "chunks": 134,
+      "answerable": 16,
+      "shouldRefuse": 4,
+      "singleCount": 12,
+      "multiCount": 4,
+      "recall": 0.9375,
+      "recallSingle": 1,
+      "recallMulti": 0.75,
+      "ndcg": 0.6445,
+      "abstainRate": 0,
+      "avgContextTokens": 530.9,
+      "citationRejects": 1
+    },
+    {
+      "tenantId": "t-hexing",
+      "chunks": 44,
+      "answerable": 5,
+      "shouldRefuse": 15,
+      "singleCount": 5,
+      "multiCount": 0,
+      "recall": 1,
+      "recallSingle": 1,
+      "recallMulti": 0,
+      "ndcg": 0.7649,
+      "abstainRate": 0.2,
+      "avgContextTokens": 359.2,
+      "citationRejects": 0
+    }
+  ],
+  "failures": [
+    {
+      "failure": "not-retrieved",
+      "ids": ["t-yunti/q06"]
+    },
+    {
+      "failure": "over-answered",
+      "ids": [
+        "t-yunti/q09",
+        "t-yunti/q10",
+        "t-yunti/q19",
+        "t-yunti/q20",
+        "t-hexing/q06",
+        "t-hexing/q07",
+        "t-hexing/q08",
+        "t-hexing/q09",
+        "t-hexing/q10",
+        "t-hexing/q12",
+        "t-hexing/q13",
+        "t-hexing/q15",
+        "t-hexing/q17",
+        "t-hexing/q18",
+        "t-hexing/q19",
+        "t-hexing/q20"
+      ]
+    },
+    {
+      "failure": "citation-misaligned",
+      "ids": ["t-yunti/q13"]
+    }
+  ],
+  "ledger": {
+    "embedTokensPerQ": 24.9,
+    "rerankCallsPerQ": 1.07,
+    "rerankInputTokensPerQ": 2345.6,
+    "genInTokensPerQ": 476.6,
+    "genOutTokensPerQ": 92.5,
+    "usdPerKQueries": 4.9681,
+    "modeledMs": 1213.5
+  }
+}

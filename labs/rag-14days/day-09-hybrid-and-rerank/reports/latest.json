@@ -1,0 +1,914 @@
+{
+  "generatedAt": "2026-09-07T04:27:18.895Z",
+  "config": {
+    "corpusDocs": 30,
+    "chunks": 134,
+    "perRouteTopK": 50,
+    "fuseKeep": 20,
+    "rrfK": 60,
+    "candidateK": 20,
+    "contextBudget": 600,
+    "ndcgK": 10,
+    "gates": {
+      "bm25MinScore": 6,
+      "vectorMinCosine": 0.2
+    },
+    "embedBackend": "mock-hash(384)",
+    "rerankBackend": "mock-overlap",
+    "prices": {
+      "embedPerMTok": 0.02,
+      "rerankPerKSearch": 2
+    },
+    "latencyModel": {
+      "embedMs": 120,
+      "rerankMs": 180
+    }
+  },
+  "blindSpots": {
+    "onlyBm25": ["q07", "q17", "q18"],
+    "onlyVector": [],
+    "neither": ["q06"]
+  },
+  "configs": [
+    {
+      "name": "vector",
+      "metrics": {
+        "recall": 0.75,
+        "recallSingle": 1,
+        "recallMulti": 0,
+        "mrr": 0.9583,
+        "ndcg": 0.5836,
+        "abstainRate": 0.25,
+        "avgContextTokens": 245.9
+      },
+      "measuredMsPerQuestion": 0.73,
+      "modeledNetworkMsPerQuestion": 120,
+      "embedTokensPerQuestion": 31.6,
+      "rerankCallsPerQuestion": 0,
+      "rerankInputTokensPerQuestion": 0,
+      "costPerKQueries": 0.0006,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6691,
+          "contextDocIds": ["doc-002", "doc-004"],
+          "contextTokens": 286,
+          "admitted": true
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.5873,
+          "contextDocIds": ["doc-012"],
+          "contextTokens": 165,
+          "admitted": true
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8688,
+          "contextDocIds": ["doc-020"],
+          "contextTokens": 153,
+          "admitted": true
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8178,
+          "contextDocIds": ["doc-024", "doc-006"],
+          "contextTokens": 593,
+          "admitted": true
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.5414,
+          "contextDocIds": ["doc-009"],
+          "contextTokens": 132,
+          "admitted": true
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.2529,
+          "contextDocIds": ["doc-019"],
+          "contextTokens": 179,
+          "admitted": true
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.3363,
+          "contextDocIds": ["doc-029"],
+          "contextTokens": 184,
+          "admitted": true
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.4522,
+          "contextDocIds": ["doc-018"],
+          "contextTokens": 91,
+          "admitted": true
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-009", "doc-025", "doc-004", "doc-012"],
+          "contextTokens": 577,
+          "admitted": true
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-001"],
+          "contextTokens": 91,
+          "admitted": true
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.359,
+          "contextDocIds": ["doc-016"],
+          "contextTokens": 175,
+          "admitted": true
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9896,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 512,
+          "admitted": true
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.7053,
+          "contextDocIds": ["doc-022"],
+          "contextTokens": 91,
+          "admitted": true
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9005,
+          "contextDocIds": ["doc-010"],
+          "contextTokens": 176,
+          "admitted": true
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.5032,
+          "contextDocIds": ["doc-017", "doc-012"],
+          "contextTokens": 283,
+          "admitted": true
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.7542,
+          "contextDocIds": ["doc-008", "doc-004"],
+          "contextTokens": 325,
+          "admitted": true
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.3363,
+          "contextDocIds": ["doc-022", "doc-011"],
+          "contextTokens": 374,
+          "admitted": true
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 0.3333,
+          "ndcg": 0.2638,
+          "contextDocIds": [],
+          "contextTokens": 0,
+          "admitted": false
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-007", "doc-005"],
+          "contextTokens": 532,
+          "admitted": true
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": [],
+          "contextTokens": 0,
+          "admitted": false
+        }
+      ]
+    },
+    {
+      "name": "bm25",
+      "metrics": {
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "mrr": 1,
+        "ndcg": 0.7089,
+        "abstainRate": 0,
+        "avgContextTokens": 525
+      },
+      "measuredMsPerQuestion": 0.15,
+      "modeledNetworkMsPerQuestion": 0,
+      "embedTokensPerQuestion": 0,
+      "rerankCallsPerQuestion": 0,
+      "rerankInputTokensPerQuestion": 0,
+      "costPerKQueries": 0,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.7642,
+          "contextDocIds": ["doc-002", "doc-023"],
+          "contextTokens": 476,
+          "admitted": true
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9122,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 478,
+          "admitted": true
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9512,
+          "contextDocIds": ["doc-020", "doc-021"],
+          "contextTokens": 530,
+          "admitted": true
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.877,
+          "contextDocIds": ["doc-024", "doc-006"],
+          "contextTokens": 593,
+          "admitted": true
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6984,
+          "contextDocIds": ["doc-009", "doc-004", "doc-024"],
+          "contextTokens": 481,
+          "admitted": true
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.2529,
+          "contextDocIds": ["doc-019", "doc-029", "doc-017"],
+          "contextTokens": 425,
+          "admitted": true
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.3833,
+          "contextDocIds": ["doc-029", "doc-021", "doc-018", "doc-017"],
+          "contextTokens": 599,
+          "admitted": true
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.4462,
+          "contextDocIds": ["doc-018", "doc-024", "doc-023"],
+          "contextTokens": 503,
+          "admitted": true
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-006", "doc-009", "doc-014"],
+          "contextTokens": 575,
+          "admitted": true
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-001", "doc-008"],
+          "contextTokens": 581,
+          "admitted": true
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.359,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+          "contextTokens": 419,
+          "admitted": true
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9818,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 577,
+          "admitted": true
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 1,
+          "contextDocIds": ["doc-022"],
+          "contextTokens": 491,
+          "admitted": true
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9047,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 566,
+          "admitted": true
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6367,
+          "contextDocIds": ["doc-017", "doc-027"],
+          "contextTokens": 478,
+          "admitted": true
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9558,
+          "contextDocIds": ["doc-008", "doc-004"],
+          "contextTokens": 491,
+          "admitted": true
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.3833,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-027"],
+          "contextTokens": 518,
+          "admitted": true
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8349,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 569,
+          "admitted": true
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-023", "doc-009", "doc-005"],
+          "contextTokens": 563,
+          "admitted": true
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-001", "doc-005", "doc-008"],
+          "contextTokens": 587,
+          "admitted": true
+        }
+      ]
+    },
+    {
+      "name": "hybrid",
+      "metrics": {
+        "recall": 0.875,
+        "recallSingle": 1,
+        "recallMulti": 0.5,
+        "mrr": 1,
+        "ndcg": 0.7186,
+        "abstainRate": 0,
+        "avgContextTokens": 490.1
+      },
+      "measuredMsPerQuestion": 0.23,
+      "modeledNetworkMsPerQuestion": 120,
+      "embedTokensPerQuestion": 31.6,
+      "rerankCallsPerQuestion": 0,
+      "rerankInputTokensPerQuestion": 0,
+      "costPerKQueries": 0.0006,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8268,
+          "contextDocIds": ["doc-002", "doc-023"],
+          "contextTokens": 476,
+          "admitted": true
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.956,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 478,
+          "admitted": true
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9758,
+          "contextDocIds": ["doc-020", "doc-021"],
+          "contextTokens": 530,
+          "admitted": true
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.983,
+          "contextDocIds": ["doc-024", "doc-006"],
+          "contextTokens": 593,
+          "admitted": true
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6886,
+          "contextDocIds": ["doc-009", "doc-024", "doc-004"],
+          "contextTokens": 537,
+          "admitted": true
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.2529,
+          "contextDocIds": ["doc-019", "doc-013", "doc-029"],
+          "contextTokens": 512,
+          "admitted": true
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.3363,
+          "contextDocIds": ["doc-029", "doc-011", "doc-026"],
+          "contextTokens": 510,
+          "admitted": true
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.5087,
+          "contextDocIds": ["doc-018", "doc-008", "doc-017"],
+          "contextTokens": 415,
+          "admitted": true
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 284,
+          "admitted": true
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-001"],
+          "contextTokens": 531,
+          "admitted": true
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.359,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+          "contextTokens": 419,
+          "admitted": true
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 1,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 512,
+          "admitted": true
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9709,
+          "contextDocIds": ["doc-022"],
+          "contextTokens": 579,
+          "admitted": true
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8928,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 535,
+          "admitted": true
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6367,
+          "contextDocIds": ["doc-017", "doc-024"],
+          "contextTokens": 488,
+          "admitted": true
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9349,
+          "contextDocIds": ["doc-008", "doc-004"],
+          "contextTokens": 491,
+          "admitted": true
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.3833,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011"],
+          "contextTokens": 406,
+          "admitted": true
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.7915,
+          "contextDocIds": ["doc-029", "doc-019", "doc-014"],
+          "contextTokens": 562,
+          "admitted": true
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-005", "doc-009"],
+          "contextTokens": 499,
+          "admitted": true
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-001", "doc-005"],
+          "contextTokens": 446,
+          "admitted": true
+        }
+      ]
+    },
+    {
+      "name": "hybrid+rerank",
+      "metrics": {
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "mrr": 1,
+        "ndcg": 0.6445,
+        "abstainRate": 0,
+        "avgContextTokens": 530.9
+      },
+      "measuredMsPerQuestion": 19.13,
+      "modeledNetworkMsPerQuestion": 300,
+      "embedTokensPerQuestion": 31.6,
+      "rerankCallsPerQuestion": 1,
+      "rerankInputTokensPerQuestion": 2922,
+      "costPerKQueries": 2.0006,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6662,
+          "contextDocIds": ["doc-002", "doc-005"],
+          "contextTokens": 599,
+          "admitted": true
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.7582,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 478,
+          "admitted": true
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9122,
+          "contextDocIds": ["doc-020", "doc-013", "doc-021"],
+          "contextTokens": 553,
+          "admitted": true
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.713,
+          "contextDocIds": ["doc-006", "doc-024"],
+          "contextTokens": 507,
+          "admitted": true
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.7087,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 568,
+          "admitted": true
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "reciprocalRank": 1,
+          "ndcg": 0.2529,
+          "contextDocIds": ["doc-019", "doc-029", "doc-013"],
+          "contextTokens": 512,
+          "admitted": true
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.3833,
+          "contextDocIds": ["doc-029", "doc-021", "doc-011"],
+          "contextTokens": 494,
+          "admitted": true
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.3392,
+          "contextDocIds": ["doc-018", "doc-024", "doc-023", "doc-017"],
+          "contextTokens": 576,
+          "admitted": true
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-006", "doc-014", "doc-009"],
+          "contextTokens": 575,
+          "admitted": true
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-001", "doc-008"],
+          "contextTokens": 581,
+          "admitted": true
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.359,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+          "contextTokens": 419,
+          "admitted": true
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.9609,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 502,
+          "admitted": true
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6548,
+          "contextDocIds": ["doc-022", "doc-010"],
+          "contextTokens": 521,
+          "admitted": true
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8048,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 566,
+          "admitted": true
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.6367,
+          "contextDocIds": ["doc-017", "doc-029"],
+          "contextTokens": 459,
+          "admitted": true
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8665,
+          "contextDocIds": ["doc-008", "doc-017"],
+          "contextTokens": 539,
+          "admitted": true
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.4575,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-029"],
+          "contextTokens": 590,
+          "admitted": true
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "reciprocalRank": 1,
+          "ndcg": 0.8383,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 569,
+          "admitted": true
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-005", "doc-023", "doc-009"],
+          "contextTokens": 563,
+          "admitted": true
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "reciprocalRank": 0,
+          "ndcg": 0,
+          "contextDocIds": ["doc-005", "doc-001"],
+          "contextTokens": 446,
+          "admitted": true
+        }
+      ]
+    }
+  ]
+}

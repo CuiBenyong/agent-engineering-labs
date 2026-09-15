@@ -1,0 +1,12 @@
+{
+  "tool": "codex 或 claude-code",
+  "startCommit": "两边必须相同的起点 commit 短 id",
+  "task": "给 TODO API 补输入校验与单元测试",
+  "promptChars": 0,
+  "instructionsChars": 0,
+  "approvals": { "count": 0, "reasons": ["每次审批是为了什么，一条一句"] },
+  "verification": { "ranTests": false, "testsPassed": 0, "testsFailed": 0, "fixedOnRed": false },
+  "cost": { "minutes": 0, "inputTokens": 0, "outputTokens": 0 },
+  "filesChanged": 0,
+  "review": { "comments": 0, "accepted": 0 }
+}

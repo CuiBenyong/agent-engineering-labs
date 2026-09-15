@@ -1,0 +1,52 @@
+[
+  {
+    "questionId": "q01",
+    "faithful": true,
+    "note": "三句话逐字来自 doc-002 与 doc-023，没有材料外的信息。"
+  },
+  {
+    "questionId": "q03",
+    "faithful": true,
+    "note": "灰度批次与观察时长都来自 doc-020 原文；另外两行是标题片段，不构成主张。"
+  },
+  {
+    "questionId": "q06",
+    "faithful": true,
+    "note": "「平台组组长书面审批」来自 doc-019；上下文里没有 doc-014，所以答案没说出人名，这是漏答不是编造。"
+  },
+  {
+    "questionId": "q09",
+    "faithful": true,
+    "note": "语料里根本没有支持的操作系统清单，回答只是把不相干的句子摘出来——不忠实的问题没有，不相关的问题很大。"
+  },
+  {
+    "questionId": "q10",
+    "faithful": true,
+    "note": "三句都来自 doc-001，没有编出可用性百分比。忠实度看不出这题答错了，要看相关性和拒答率。"
+  },
+  {
+    "questionId": "q12",
+    "faithful": true,
+    "note": "四行都出自 doc-026，但摘到的全是标题和无关句，恰好没摘到「企业版紧急 30 分钟」那一行。"
+  },
+  {
+    "questionId": "q13",
+    "faithful": true,
+    "note": "第一行逐字命中 doc-022 的保留期。改掉拆句规则之前裁判给 0.60，是被标题片段拖累的误判。"
+  },
+  {
+    "questionId": "q17",
+    "faithful": true,
+    "note": "二级变更与提前 2 个工作日都来自 doc-022 与 doc-021；第三行远程办公无关但确实是材料原文。"
+  },
+  {
+    "questionId": "q19",
+    "faithful": true,
+    "note": "第一行是 doc-005 那张排版错乱的表格原文，看着像乱码但确实是材料里的内容，不算编造。"
+  },
+  {
+    "questionId": "q20",
+    "faithful": true,
+    "note": "三句都来自材料，没有编出 CPU 和内存配置——但也因此完全没回答问题。"
+  }
+]

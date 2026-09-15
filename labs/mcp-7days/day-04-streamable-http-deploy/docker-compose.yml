@@ -1,0 +1,27 @@
+# 两个完全一样的副本。协议无状态，所以不需要粘性路由——
+# 同一个客户端把请求轮流打到 3034 和 4034，两边都能处理。
+services:
+  mcp-a:
+    build:
+      context: .
+      args:
+        SRC: solution
+    ports:
+      - '3034:3034'
+    environment:
+      # 两个副本必须共用同一个签名密钥，否则 A 签发的 requestState 到 B 就验不过
+      REQUEST_STATE_SECRET: shared-dev-secret
+      REPLICA: a
+    stop_grace_period: 10s
+
+  mcp-b:
+    build:
+      context: .
+      args:
+        SRC: solution
+    ports:
+      - '4034:3034'
+    environment:
+      REQUEST_STATE_SECRET: shared-dev-secret
+      REPLICA: b
+    stop_grace_period: 10s

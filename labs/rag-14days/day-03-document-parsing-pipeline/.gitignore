@@ -1,0 +1,5 @@
+# 样例文件由 src/make-samples.ts 每次运行时生成，不入库
+samples/
+# 解析产物同理，D4 会自己重新生成一份
+starter/out/
+solution/out/

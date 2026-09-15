@@ -1,0 +1,12 @@
+# 真实模式用：docker compose up -d，然后
+# REDIS_URL=redis://127.0.0.1:6510 WORKER_ID=worker-A pnpm start:worker
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6510:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 5

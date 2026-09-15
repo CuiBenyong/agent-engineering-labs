@@ -1,0 +1,68 @@
+{
+  "$comment": "工具评估集。三类用例缺一不可：正例、边界、诱导误选（负例）。expected 为 null 表示这一条不该调用任何工具。",
+  "cases": [
+    {
+      "id": "happy-1",
+      "kind": "happy",
+      "utterance": "帮我搜一下上季度的发布流程文档",
+      "expected": "search_docs",
+      "why": "不知道 slug，只有关键词"
+    },
+    {
+      "id": "happy-2",
+      "kind": "happy",
+      "utterance": "打开 slug 为 release-process 的那篇",
+      "expected": "get_doc",
+      "why": "slug 已经明确给出来了"
+    },
+    {
+      "id": "happy-3",
+      "kind": "happy",
+      "utterance": "新建一篇标题叫 值班手册 的文档",
+      "expected": "create_doc",
+      "why": "明确的写操作"
+    },
+    {
+      "id": "happy-4",
+      "kind": "happy",
+      "utterance": "找一下有哪些关于分页的文档",
+      "expected": "search_docs",
+      "why": "典型的检索意图"
+    },
+    {
+      "id": "edge-1",
+      "kind": "edge",
+      "utterance": "release-process 这篇讲了什么",
+      "expected": "get_doc",
+      "why": "没有动词提示，只有一个看起来像 slug 的词——最容易被误判成搜索"
+    },
+    {
+      "id": "edge-2",
+      "kind": "edge",
+      "utterance": "把刚才那段结论记下来，标题就叫 复盘",
+      "expected": "create_doc",
+      "why": "写操作但没出现新建二字，靠语义而不是关键词"
+    },
+    {
+      "id": "trap-1",
+      "kind": "trap",
+      "utterance": "谢谢，不用查文档了",
+      "expected": null,
+      "why": "带了查和文档两个词，但意图是否定的"
+    },
+    {
+      "id": "trap-2",
+      "kind": "trap",
+      "utterance": "文档这个词英文怎么说",
+      "expected": null,
+      "why": "话题里有文档，但这是一个语言问题，不需要任何工具"
+    },
+    {
+      "id": "trap-3",
+      "kind": "trap",
+      "utterance": "你都能干什么",
+      "expected": null,
+      "why": "闲聊。模型在这里调工具是典型的过度触发"
+    }
+  ]
+}

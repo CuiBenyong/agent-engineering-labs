@@ -1,0 +1,17 @@
+# 本实验自带的基础设施。MOCK=1 用不上它，想跑真实版才需要：
+#   docker compose up -d
+#   cd solution && REDIS_URL=redis://127.0.0.1:6511 \
+#     DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5511/day11 SELFTEST=1 MOCK=1 pnpm start
+# 端口都做了偏移，避免和本机已有的 Redis(6379) / 课程主库(5433) 撞车。
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6511:6379'
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: day11
+    ports:
+      - '5511:5432'

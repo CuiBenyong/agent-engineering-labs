@@ -1,0 +1,265 @@
+/**
+ * 终端渲染层。来自 D5，本天改了一处：error 事件按 retryable 分成两种打法。
+ * 循环要自己重试的（retryable 为真）只打一行「↻ …」并记进 retries，不算这一轮失败；
+ * 不重试的才落成最后那一行错误说明。ToolTrace 也顺手多了一个 blockedBy，
+ * 让终端能区分「工具失败了」和「这次调用被挡下来了」。
+ *
+ * 原 D4 说明：加了工具卡片：tool_start 与 tool_end 各打一行，
+ * 让用户看得见 Agent 正在读哪个文件、结果有多大、有没有被截断。
+ *
+ * 注意它拿到的仍然只有语义事件——渲染层不知道工具是怎么执行的，也不知道
+ * 那段参数文本是从几个分片拼起来的。这就是 D2 那层分界在今天的红利。
+ *
+ * 原 D2 说明：它只订阅 AgentEvent，完全不知道 SSE 与网关报文的存在。
+ *
+ * D1 的版本是「攒完再打」：等一轮结束才把整段文本一次性输出。今天换成真正的
+ * 增量渲染，三个要处理的问题都写在下面：
+ *
+ *   1. 一行文本会跨很多个分片到达，所以「行」是渲染的最小定型单位，
+ *      未完成的行只能先按原样显示，等换行符到达才定型（styleInline）。
+ *   2. 围栏代码块的 ``` 自己也会被切开：只收到 `` 的时候不能按行内代码渲染，
+ *      否则屏幕会闪一下再变回去（looksUnsettled 就是干这个的）。
+ *   3. 管道里没有光标。真终端用「回到行首 + 清行 + 重画」做打字机；
+ *      非 TTY（CI、管道、别的 Agent 的 shell）退化成纯追加，不发任何光标控制符。
+ */
+import type { AgentEvent } from './kernel/types.js'
+
+const RESET = '\u001b[0m'
+const DIM = '\u001b[2m'
+const BOLD = '\u001b[1m'
+const CYAN = '\u001b[36m'
+/** 回到行首并清掉整行：打字机重画的唯一手段 */
+const CLEAR_LINE = '\r\u001b[2K'
+
+/**
+ * 这一行还可能被后续字符改变含义吗？
+ *
+ * 只要还可能变，就先按原样显示，不套任何样式。三种「还会变」的情况：
+ *   - 只收到一两个反引号：它可能长成行内代码，也可能长成围栏
+ *   - 反引号个数是奇数：行内代码还没闭合
+ *   - 结尾停在星号上：加粗标记还没闭合
+ */
+export function looksUnsettled(line: string): boolean {
+  const trimmed = line.trimStart()
+  if (/^`{1,2}$/.test(trimmed)) return true
+  const ticks = (line.match(/`/g) ?? []).length
+  if (ticks % 2 === 1) return true
+  if (/\*{1,2}$/.test(line)) return true
+  return false
+}
+
+/** 一行定型之后才上样式。故意只支持三种标记：标题、行内代码、加粗 */
+export function styleInline(line: string): string {
+  if (/^#{1,6}\s/.test(line)) return `${BOLD}${line}${RESET}`
+  return line
+    .replace(/`([^`]+)`/g, `${CYAN}$1${RESET}`)
+    .replace(/\*\*([^*]+)\*\*/g, `${BOLD}$1${RESET}`)
+}
+
+/** 一行是围栏吗（``` 或 ```ts） */
+export function isFence(line: string): boolean {
+  return /^\s*```/.test(line)
+}
+
+/**
+ * 增量 Markdown 渲染器。喂进来的是任意长度的文本片，吐出去的是终端字节。
+ * 它自己不认识 SSE、不认识事件，只认识「又来了几个字符」。
+ */
+export class MarkdownStream {
+  private line = ''
+  private codeBlocks = 0
+  private inCode = false
+
+  constructor(
+    private readonly write: (chunk: string) => void,
+    /** 真终端才做光标控制；管道里纯追加 */
+    private readonly tty: boolean
+  ) {}
+
+  push(delta: string): void {
+    for (const ch of delta) {
+      if (ch === '\n') {
+        this.commitLine()
+      } else {
+        this.line += ch
+        // 非 TTY 没有光标，只能来一个字符写一个字符——这也是「增量」，只是没有样式
+        if (!this.tty) this.write(ch)
+      }
+    }
+    if (this.tty) this.redraw()
+  }
+
+  /** 一轮结束：把最后一行（可能没有换行符）定型 */
+  end(): void {
+    if (this.line) this.commitLine()
+  }
+
+  get stats(): { codeBlocks: number; inCode: boolean } {
+    return { codeBlocks: this.codeBlocks, inCode: this.inCode }
+  }
+
+  /** 未定型的当前行：重画一次。样式要等定型，所以这里可能是原样文本 */
+  private redraw(): void {
+    const body = this.inCode || looksUnsettled(this.line) ? this.line : styleInline(this.line)
+    this.write(`${CLEAR_LINE}${this.inCode ? DIM + body + RESET : body}`)
+  }
+
+  private commitLine(): void {
+    const line = this.line
+    this.line = ''
+
+    if (isFence(line)) {
+      // 围栏行本身：切换代码模式。进入时记一次数，这样自检能断言代码块个数
+      if (!this.inCode) this.codeBlocks += 1
+      this.inCode = !this.inCode
+      this.emitLine(`${DIM}${line}${RESET}`)
+      return
+    }
+    this.emitLine(this.inCode ? `${DIM}${line}${RESET}` : styleInline(line))
+  }
+
+  private emitLine(styled: string): void {
+    // TTY：清掉刚才那半行的重画结果，用定型版本覆盖。非 TTY：字符已经追加过了，只补换行
+    this.write(this.tty ? `${CLEAR_LINE}${styled}\n` : '\n')
+  }
+}
+
+export interface ToolTrace {
+  name: string
+  ok: boolean
+  chars: number
+  truncated: boolean
+  /** 这次调用是被谁挡下来的（审批门 approval、打转检测 repeat），真的执行了就没有这个字段 */
+  blockedBy?: string
+}
+
+export interface RenderSummary {
+  /** 所有 text 增量拼接起来的真值，用来验证渲染没丢字 */
+  text: string
+  deltas: number
+  /** 这一轮里工具被调了几次、每次的结果多大——自检与 D20 的成本统计都要用 */
+  tools: ToolTrace[]
+  firstDeltaMs: number | null
+  totalMs: number
+  codeBlocks: number
+  /** 循环自己退避重试了几次。它不算失败，所以单独记一个数 */
+  retries: number
+  /** 被用户打断了 */
+  interrupted: boolean
+  /** 出错了：这里存的是给人看的一句话，不是堆栈 */
+  error: string | null
+}
+
+/**
+ * 把一轮 AgentEvent 渲染到终端。
+ *
+ * 注意它对每种事件的处理都很短——因为渲染层的职责就只有「把语义翻成屏幕上的字」。
+ * 一旦这里出现了 if (delta.choices...) 这种东西，说明网关的报文格式漏进来了。
+ */
+export async function renderTurn(
+  events: AsyncIterable<AgentEvent>,
+  out: (chunk: string) => void,
+  options: { tty?: boolean } = {}
+): Promise<RenderSummary> {
+  const tty = options.tty ?? Boolean(process.stdout.isTTY)
+  const stream = new MarkdownStream(out, tty)
+  const startedAt = Date.now()
+
+  let text = ''
+  let deltas = 0
+  let firstDeltaMs: number | null = null
+  let usageLine = ''
+  let interrupted = false
+  let retries = 0
+  let error: string | null = null
+  const tools: ToolTrace[] = []
+  /** tool_end 事件只带 id，工具名要从 tool_start 那里记下来 */
+  const nameById = new Map<string, string>()
+
+  for await (const event of events) {
+    switch (event.type) {
+      case 'text':
+        deltas += 1
+        firstDeltaMs ??= Date.now() - startedAt
+        text += event.delta
+        stream.push(event.delta)
+        break
+      case 'usage':
+        usageLine = `输入 ${event.promptTokens} token，输出 ${event.completionTokens} token`
+        break
+      case 'error':
+        // retryable 在本课的含义是「循环接下来会自己再试一次」，所以这里只打一行提示，
+        // 不把这一轮算成失败。这一位是 D2 定协议时留下的字段，今天才真正用上。
+        if (event.retryable) {
+          stream.end()
+          out(`${DIM}↻ ${event.message}${RESET}\n`)
+          retries += 1
+        } else {
+          error = event.message
+        }
+        break
+      case 'done':
+        if (event.reason === 'aborted') interrupted = true
+        break
+      case 'tool_start': {
+        // 先把没写完的那一行定型，别让工具卡片插在半行中间
+        stream.end()
+        nameById.set(event.call.id, event.call.name)
+        const args = event.call.args.trim()
+        const preview = args.length > 80 ? `${args.slice(0, 80)}…` : args
+        out(`${DIM}⚙ ${event.call.name}(${preview})${RESET}\n`)
+        break
+      }
+      case 'tool_end': {
+        const result = event.result
+        const truncated = Boolean(result.meta?.truncated)
+        tools.push({
+          name: nameById.get(event.id) ?? '未知工具',
+          ok: result.ok,
+          chars: result.content.length,
+          truncated,
+          ...(typeof result.meta?.blockedBy === 'string'
+            ? { blockedBy: result.meta.blockedBy }
+            : {}),
+        })
+        const head = result.content.split('\n')[0]?.slice(0, 60) ?? ''
+        out(
+          `${DIM}${result.ok ? '✔' : '✘'} ${nameById.get(event.id) ?? ''} 回灌 ${result.content.length} 字符` +
+            `${truncated ? '（已截断）' : ''} · ${head}${RESET}\n`
+        )
+        break
+      }
+    }
+  }
+  stream.end()
+
+  // 收尾顺序很重要：先把已经收到的文本定型，再补一行说明发生了什么。
+  // 断流与打断都不该把已经生成的内容丢掉——用户看过的东西不能凭空消失。
+  if (error) out(`${DIM}——${error}（已保留上面收到的部分）${RESET}\n`)
+  if (interrupted) out(`${DIM}——已打断，保留了上面收到的 ${text.length} 个字符${RESET}\n`)
+
+  const totalMs = Date.now() - startedAt
+  const stats = [
+    `${deltas} 个分片`,
+    tools.length > 0 ? `${tools.length} 次工具调用` : '',
+    retries > 0 ? `重试 ${retries} 次` : '',
+    firstDeltaMs === null ? '无首字' : `首字 ${firstDeltaMs}ms`,
+    `总计 ${totalMs}ms`,
+    usageLine,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+  out(`${DIM}（${stats}）${RESET}\n`)
+
+  return {
+    text,
+    deltas,
+    tools,
+    firstDeltaMs,
+    totalMs,
+    codeBlocks: stream.stats.codeBlocks,
+    retries,
+    interrupted,
+    error,
+  }
+}

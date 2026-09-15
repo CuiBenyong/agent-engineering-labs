@@ -1,0 +1,21 @@
+{
+  "name": "rag-14days-day-11-parent-child-and-contextual-solution",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.124.0",
+    "dotenv": "^16.4.5",
+    "js-tiktoken": "1.0.21",
+    "openai": "7.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

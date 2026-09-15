@@ -1,0 +1,24 @@
+{
+  "name": "frontend-agent-ux-7days-day-04-reasoning-state-solution",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 3134",
+    "start": "next dev -p 3134",
+    "build": "next build",
+    "selftest": "tsx scripts/selftest.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "chunking": {
+    "strategy": "heading",
+    "maxChars": 500,
+    "minChars": 60,
+    "overlapChars": 60
+  },
+  "embedding": {
+    "backend": "auto",
+    "model": "text-embedding-3-small",
+    "dimensions": 384
+  },
+  "retrieval": {
+    "routes": ["bm25", "vector"],
+    "perRouteTopK": 8,
+    "topK": 4,
+    "weights": { "bm25": 1, "vector": 0.6 },
+    "gates": { "bm25MinScore": 6, "vectorMinCosine": 0.2 },
+    "bm25": { "k1": 1.2, "b": 0.75 }
+  },
+  "generation": {
+    "model": "claude-sonnet-5",
+    "maxContextChars": 6000
+  }
+}

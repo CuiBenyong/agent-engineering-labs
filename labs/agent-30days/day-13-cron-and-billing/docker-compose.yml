@@ -1,0 +1,18 @@
+# 本 lab 自己的依赖服务。跑起来之后设置
+#   REDIS_URL=redis://127.0.0.1:6513
+#   DATABASE_URL=postgres://koda:koda@127.0.0.1:5513/koda
+# 并去掉 MOCK=1，跑的就是同一份业务代码（差别只在 src/infra/real.ts）。
+# 端口故意错开仓库根 docker-compose.yml 的 5433，避免和网站的库撞上。
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6513:6379'
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: koda
+      POSTGRES_PASSWORD: koda
+      POSTGRES_DB: koda
+    ports:
+      - '5513:5432'

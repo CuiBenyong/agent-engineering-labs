@@ -1,0 +1,20 @@
+# 真实版依赖：带 pgvector 扩展的 Postgres。一个库同时干两件事——
+# HNSW 索引做向量检索，GIN + tsvector 做关键词检索，混合检索不需要第二个数据库。
+#
+# docker compose up -d 之后：
+#   DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5524/agent_rag
+# 跑的是同一份检索代码，差别只在 src/infra/ 里换了一个 Store 实现。
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: agent_rag
+    # 端口 = 5500 + 天号，避开课程主仓库的 5433 与其他天的实验容器
+    ports:
+      - '5524:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d agent_rag']
+      interval: 5s
+      timeout: 3s
+      retries: 10

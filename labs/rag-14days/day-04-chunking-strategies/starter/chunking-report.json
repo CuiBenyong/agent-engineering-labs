@@ -1,0 +1,796 @@
+{
+  "generatedAt": "2026-09-06T15:50:18.295Z",
+  "mock": true,
+  "contextBudget": 600,
+  "corpus": {
+    "docCount": 30
+  },
+  "strategies": [
+    {
+      "name": "固定长度 400/80",
+      "stats": {
+        "chunkCount": 60,
+        "avgChars": 264,
+        "p50Chars": 398,
+        "p90Chars": 400,
+        "maxChars": 400,
+        "avgTokens": 261,
+        "brokenRatio": 0.483,
+        "totalTokens": 15641
+      },
+      "answerable": 8,
+      "hits": 6,
+      "hitRate": 0.75,
+      "avgContextTokens": 404,
+      "avgBestRank": 2.88,
+      "avgUsedChunks": 1.4,
+      "noneTopScores": [
+        {
+          "id": "q09",
+          "topScore": 21.858
+        },
+        {
+          "id": "q10",
+          "topScore": 15.6263
+        }
+      ],
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-002"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 29.8507,
+          "contextTokens": 335
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-012"],
+          "usedChunks": 2,
+          "bestRank": 1,
+          "topScore": 32.605,
+          "contextTokens": 523
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-020"],
+          "usedChunks": 2,
+          "bestRank": 1,
+          "topScore": 22.2936,
+          "contextTokens": 468
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-024"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 12.7204,
+          "contextTokens": 379
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-009"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 49.4559,
+          "contextTokens": 375
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-019", "doc-029"],
+          "usedChunks": 2,
+          "bestRank": 15,
+          "topScore": 28.9995,
+          "contextTokens": 508
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-029"],
+          "usedChunks": 1,
+          "bestRank": 2,
+          "topScore": 33.2658,
+          "contextTokens": 420
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-018"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 48.3859,
+          "contextTokens": 382
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-006"],
+          "usedChunks": 1,
+          "bestRank": 21,
+          "topScore": 21.858,
+          "contextTokens": 346
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-001", "doc-008"],
+          "usedChunks": 2,
+          "bestRank": 21,
+          "topScore": 15.6263,
+          "contextTokens": 306
+        }
+      ]
+    },
+    {
+      "name": "递归 400/80",
+      "stats": {
+        "chunkCount": 60,
+        "avgChars": 305,
+        "p50Chars": 398,
+        "p90Chars": 400,
+        "maxChars": 400,
+        "avgTokens": 300,
+        "brokenRatio": 0.483,
+        "totalTokens": 18002
+      },
+      "answerable": 8,
+      "hits": 6,
+      "hitRate": 0.75,
+      "avgContextTokens": 379,
+      "avgBestRank": 2.88,
+      "avgUsedChunks": 1.2,
+      "noneTopScores": [
+        {
+          "id": "q09",
+          "topScore": 22.549
+        },
+        {
+          "id": "q10",
+          "topScore": 13.9832
+        }
+      ],
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-002"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 29.9109,
+          "contextTokens": 335
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-012"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 32.6833,
+          "contextTokens": 389
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-020"],
+          "usedChunks": 2,
+          "bestRank": 1,
+          "topScore": 23.1885,
+          "contextTokens": 545
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-024"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 12.5413,
+          "contextTokens": 379
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-009"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 50.8864,
+          "contextTokens": 375
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-019"],
+          "usedChunks": 1,
+          "bestRank": 15,
+          "topScore": 37.5234,
+          "contextTokens": 203
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-029"],
+          "usedChunks": 1,
+          "bestRank": 2,
+          "topScore": 35.0191,
+          "contextTokens": 420
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-018"],
+          "usedChunks": 2,
+          "bestRank": 1,
+          "topScore": 47.3149,
+          "contextTokens": 565
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-006"],
+          "usedChunks": 1,
+          "bestRank": 21,
+          "topScore": 22.549,
+          "contextTokens": 346
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-001"],
+          "usedChunks": 1,
+          "bestRank": 21,
+          "topScore": 13.9832,
+          "contextTokens": 235
+        }
+      ]
+    },
+    {
+      "name": "按结构 (上限 700)",
+      "stats": {
+        "chunkCount": 30,
+        "avgChars": 592,
+        "p50Chars": 583,
+        "p90Chars": 653,
+        "maxChars": 720,
+        "avgTokens": 575,
+        "brokenRatio": 0,
+        "totalTokens": 17250
+      },
+      "answerable": 8,
+      "hits": 6,
+      "hitRate": 0.75,
+      "avgContextTokens": 429,
+      "avgBestRank": 2.75,
+      "avgUsedChunks": 0.8,
+      "noneTopScores": [
+        {
+          "id": "q09",
+          "topScore": 18.8154
+        },
+        {
+          "id": "q10",
+          "topScore": 16.0351
+        }
+      ],
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-002"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 27.9703,
+          "contextTokens": 548
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-012"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 31.9096,
+          "contextTokens": 578
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-020"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 25.3478,
+          "contextTokens": 512
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-024"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 10.2195,
+          "contextTokens": 517
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-009"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 46.6188,
+          "contextTokens": 496
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-019"],
+          "usedChunks": 1,
+          "bestRank": 13,
+          "topScore": 28.5535,
+          "contextTokens": 586
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "docIds": [],
+          "usedChunks": 0,
+          "bestRank": 3,
+          "topScore": 34.7136,
+          "contextTokens": 0
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-018"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 45.0392,
+          "contextTokens": 524
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-006"],
+          "usedChunks": 1,
+          "bestRank": 21,
+          "topScore": 18.8154,
+          "contextTokens": 526
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "docIds": [],
+          "usedChunks": 0,
+          "bestRank": 21,
+          "topScore": 16.0351,
+          "contextTokens": 0
+        }
+      ]
+    },
+    {
+      "name": "父子 200/40 → 节",
+      "stats": {
+        "chunkCount": 158,
+        "avgChars": 100,
+        "p50Chars": 89,
+        "p90Chars": 162,
+        "maxChars": 240,
+        "avgTokens": 100,
+        "brokenRatio": 0.051,
+        "totalTokens": 15809
+      },
+      "answerable": 8,
+      "hits": 7,
+      "hitRate": 0.875,
+      "avgContextTokens": 510,
+      "avgBestRank": 3.63,
+      "avgUsedChunks": 4.6,
+      "noneTopScores": [
+        {
+          "id": "q09",
+          "topScore": 23.4462
+        },
+        {
+          "id": "q10",
+          "topScore": 19.1457
+        }
+      ],
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-002", "doc-005", "doc-028"],
+          "usedChunks": 3,
+          "bestRank": 1,
+          "topScore": 33.5343,
+          "contextTokens": 484
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-012", "doc-006", "doc-004"],
+          "usedChunks": 4,
+          "bestRank": 1,
+          "topScore": 32.0754,
+          "contextTokens": 526
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-020", "doc-021", "doc-017", "doc-013"],
+          "usedChunks": 5,
+          "bestRank": 1,
+          "topScore": 26.4706,
+          "contextTokens": 536
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-024", "doc-006", "doc-001"],
+          "usedChunks": 6,
+          "bestRank": 1,
+          "topScore": 15.9056,
+          "contextTokens": 547
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-009", "doc-004", "doc-001", "doc-008"],
+          "usedChunks": 5,
+          "bestRank": 1,
+          "topScore": 60.427,
+          "contextTokens": 516
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-019", "doc-029", "doc-017"],
+          "usedChunks": 4,
+          "bestRank": 21,
+          "topScore": 42.6052,
+          "contextTokens": 433
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "docIds": ["doc-029", "doc-021", "doc-018", "doc-017"],
+          "usedChunks": 4,
+          "bestRank": 2,
+          "topScore": 43.1787,
+          "contextTokens": 528
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-018", "doc-009", "doc-024", "doc-017", "doc-008", "doc-001"],
+          "usedChunks": 7,
+          "bestRank": 1,
+          "topScore": 79.3584,
+          "contextTokens": 564
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-006", "doc-014"],
+          "usedChunks": 3,
+          "bestRank": 21,
+          "topScore": 23.4462,
+          "contextTokens": 397
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-001", "doc-008", "doc-017"],
+          "usedChunks": 5,
+          "bestRank": 21,
+          "topScore": 19.1457,
+          "contextTokens": 565
+        }
+      ]
+    },
+    {
+      "name": "语义 (25%分位)",
+      "stats": {
+        "chunkCount": 32,
+        "avgChars": 515,
+        "p50Chars": 542,
+        "p90Chars": 590,
+        "maxChars": 597,
+        "avgTokens": 522,
+        "brokenRatio": 0,
+        "totalTokens": 16689
+      },
+      "answerable": 8,
+      "hits": 6,
+      "hitRate": 0.75,
+      "avgContextTokens": 473,
+      "avgBestRank": 2.75,
+      "avgUsedChunks": 0.9,
+      "noneTopScores": [
+        {
+          "id": "q09",
+          "topScore": 19.0993
+        },
+        {
+          "id": "q10",
+          "topScore": 16.2216
+        }
+      ],
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-002"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 27.238,
+          "contextTokens": 529
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-012"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 32.074,
+          "contextTokens": 563
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-020"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 25.5151,
+          "contextTokens": 494
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-024"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 10.5454,
+          "contextTokens": 500
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-009"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 46.9032,
+          "contextTokens": 479
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-019"],
+          "usedChunks": 1,
+          "bestRank": 13,
+          "topScore": 28.4289,
+          "contextTokens": 563
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-029"],
+          "usedChunks": 1,
+          "bestRank": 3,
+          "topScore": 34.815,
+          "contextTokens": 587
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-018"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 45.4565,
+          "contextTokens": 508
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-006"],
+          "usedChunks": 1,
+          "bestRank": 21,
+          "topScore": 19.0993,
+          "contextTokens": 511
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "docIds": [],
+          "usedChunks": 0,
+          "bestRank": 21,
+          "topScore": 16.2216,
+          "contextTokens": 0
+        }
+      ]
+    },
+    {
+      "name": "固定长度+块头",
+      "stats": {
+        "chunkCount": 60,
+        "avgChars": 264,
+        "p50Chars": 398,
+        "p90Chars": 400,
+        "maxChars": 400,
+        "avgTokens": 261,
+        "brokenRatio": 0.483,
+        "totalTokens": 15641
+      },
+      "answerable": 8,
+      "hits": 6,
+      "hitRate": 0.75,
+      "avgContextTokens": 404,
+      "avgBestRank": 2.88,
+      "avgUsedChunks": 1.4,
+      "noneTopScores": [
+        {
+          "id": "q09",
+          "topScore": 21.858
+        },
+        {
+          "id": "q10",
+          "topScore": 15.6263
+        }
+      ],
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-002"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 29.8507,
+          "contextTokens": 335
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-012"],
+          "usedChunks": 2,
+          "bestRank": 1,
+          "topScore": 32.605,
+          "contextTokens": 523
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-020"],
+          "usedChunks": 2,
+          "bestRank": 1,
+          "topScore": 22.2936,
+          "contextTokens": 468
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-024"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 12.7204,
+          "contextTokens": 379
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-009"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 49.4559,
+          "contextTokens": 375
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-019", "doc-029"],
+          "usedChunks": 2,
+          "bestRank": 15,
+          "topScore": 28.9995,
+          "contextTokens": 508
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": false,
+          "docIds": ["doc-029"],
+          "usedChunks": 1,
+          "bestRank": 2,
+          "topScore": 33.2658,
+          "contextTokens": 420
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "docIds": ["doc-018"],
+          "usedChunks": 1,
+          "bestRank": 1,
+          "topScore": 48.3859,
+          "contextTokens": 382
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-006"],
+          "usedChunks": 1,
+          "bestRank": 21,
+          "topScore": 21.858,
+          "contextTokens": 346
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "docIds": ["doc-001", "doc-008"],
+          "usedChunks": 2,
+          "bestRank": 21,
+          "topScore": 15.6263,
+          "contextTokens": 306
+        }
+      ]
+    }
+  ]
+}

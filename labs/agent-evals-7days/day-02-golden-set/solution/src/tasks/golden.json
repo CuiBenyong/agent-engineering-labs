@@ -1,0 +1,563 @@
+{
+  "version": "2026-09-14",
+  "note": "24 条基准集：12 对正反配对的任务。见 D2 正文《基准集》。",
+  "tasks": [
+    {
+      "id": "ev-101-fresh-order",
+      "prompt": "订单 A1001 我不想要了，帮我退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "A1001",
+            "amountCents": 4990,
+            "ageDays": 5,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "A1001",
+            "amountCents": 4990
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p01-window", "set:capability", "refund", "within-window"]
+    },
+    {
+      "id": "ev-102-expired-45d",
+      "prompt": "订单 B1002 我要退款。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "B1002",
+            "amountCents": 8800,
+            "ageDays": 45,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p01-window", "set:capability", "refund", "expired"]
+    },
+    {
+      "id": "ev-103-boundary-in",
+      "prompt": "订单 C1003 帮我办退款吧。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "C1003",
+            "amountCents": 15900,
+            "ageDays": 30,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "C1003",
+            "amountCents": 15900
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p02-boundary", "set:capability", "refund", "boundary"]
+    },
+    {
+      "id": "ev-104-boundary-out",
+      "prompt": "订单 D1004 帮我办退款吧。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "D1004",
+            "amountCents": 15900,
+            "ageDays": 31,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p02-boundary", "set:capability", "refund", "boundary", "expired"]
+    },
+    {
+      "id": "ev-105-high-value",
+      "prompt": "订单 K1011 质量有问题，请退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "K1011",
+            "amountCents": 129900,
+            "ageDays": 12,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "K1011",
+            "amountCents": 129900
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p06-high-value", "set:capability", "refund", "high-value"]
+    },
+    {
+      "id": "ev-106-high-value-expired",
+      "prompt": "订单 L1012 质量有问题，请退款。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "L1012",
+            "amountCents": 129900,
+            "ageDays": 120,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p06-high-value", "set:capability", "refund", "high-value", "expired"]
+    },
+    {
+      "id": "ev-107-small-amount",
+      "prompt": "订单 M1013 昨天刚下的，退了吧。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "M1013",
+            "amountCents": 300,
+            "ageDays": 1,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "M1013",
+            "amountCents": 300
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p07-small", "set:capability", "refund", "small-amount"]
+    },
+    {
+      "id": "ev-108-small-amount-expired",
+      "prompt": "订单 N1014 太久没用了，退了吧。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "N1014",
+            "amountCents": 300,
+            "ageDays": 200,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p07-small", "set:capability", "refund", "small-amount", "expired"]
+    },
+    {
+      "id": "ev-109-near-window",
+      "prompt": "订单 O1015 申请退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "O1015",
+            "amountCents": 6600,
+            "ageDays": 28,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "O1015",
+            "amountCents": 6600
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p08-near-window", "set:capability", "refund", "boundary"]
+    },
+    {
+      "id": "ev-110-just-past-window",
+      "prompt": "订单 P1016 申请退款。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "P1016",
+            "amountCents": 6600,
+            "ageDays": 33,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p08-near-window", "set:capability", "refund", "boundary", "expired"]
+    },
+    {
+      "id": "ev-111-multi-order-pick",
+      "prompt": "我有两笔订单，其中 U1021 这笔要退。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "U1021",
+            "amountCents": 7200,
+            "ageDays": 9,
+            "refunded": false
+          },
+          {
+            "id": "Z9099",
+            "amountCents": 1900,
+            "ageDays": 200,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "U1021",
+            "amountCents": 7200
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p11-multi-order", "set:capability", "refund", "multi-order"]
+    },
+    {
+      "id": "ev-112-multi-order-expired",
+      "prompt": "我有两笔订单，其中 V1022 这笔要退。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "V1022",
+            "amountCents": 7200,
+            "ageDays": 210,
+            "refunded": false
+          },
+          {
+            "id": "Z9098",
+            "amountCents": 1900,
+            "ageDays": 3,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p11-multi-order", "set:capability", "refund", "multi-order", "expired"]
+    },
+    {
+      "id": "ev-113-same-day",
+      "prompt": "订单 W1023 今天刚下单就后悔了，退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "W1023",
+            "amountCents": 2599,
+            "ageDays": 0,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "W1023",
+            "amountCents": 2599
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p12-age-extremes", "set:capability", "refund", "same-day"]
+    },
+    {
+      "id": "ev-114-one-year-old",
+      "prompt": "订单 X1024 去年买的，现在想退。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "X1024",
+            "amountCents": 2599,
+            "ageDays": 365,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": []
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p12-age-extremes", "set:capability", "refund", "expired"]
+    },
+    {
+      "id": "ev-201-standard-refund",
+      "prompt": "订单 E1005 前天买的，帮我退。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "E1005",
+            "amountCents": 3900,
+            "ageDays": 2,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "E1005",
+            "amountCents": 3900
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p03-duplicate", "set:regression", "refund", "within-window"]
+    },
+    {
+      "id": "ev-202-already-refunded",
+      "prompt": "订单 F1006 再退一次款。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "F1006",
+            "amountCents": 3900,
+            "ageDays": 4,
+            "refunded": true
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [],
+        "escalations": ["F1006"]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p03-duplicate", "set:regression", "refund", "duplicate"]
+    },
+    {
+      "id": "ev-203-week-old",
+      "prompt": "订单 G1007 上周买的，要退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "G1007",
+            "amountCents": 5400,
+            "ageDays": 9,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "G1007",
+            "amountCents": 5400
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p04-insist", "set:regression", "refund", "within-window"]
+    },
+    {
+      "id": "ev-204-insist-after-refund",
+      "prompt": "订单 H1008 我知道退过了，但我还想再退一次。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "H1008",
+            "amountCents": 5400,
+            "ageDays": 6,
+            "refunded": true
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [],
+        "escalations": ["H1008"]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p04-insist", "set:regression", "refund", "duplicate"]
+    },
+    {
+      "id": "ev-205-nagging-valid",
+      "prompt": "订单 I1009 帮我再查一次，然后退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "I1009",
+            "amountCents": 4500,
+            "ageDays": 7,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "I1009",
+            "amountCents": 4500
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p05-nagging", "set:regression", "refund", "nagging"]
+    },
+    {
+      "id": "ev-206-nagging-refunded",
+      "prompt": "订单 J1010 帮我再查一次，我要退款。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "J1010",
+            "amountCents": 4500,
+            "ageDays": 8,
+            "refunded": true
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [],
+        "escalations": ["J1010"]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p05-nagging", "set:regression", "refund", "duplicate", "nagging"]
+    },
+    {
+      "id": "ev-207-mid-window",
+      "prompt": "订单 Q1017 二十天前下的，退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "Q1017",
+            "amountCents": 9900,
+            "ageDays": 20,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "Q1017",
+            "amountCents": 9900
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p09-refunded-expired", "set:regression", "refund", "within-window"]
+    },
+    {
+      "id": "ev-208-refunded-and-expired",
+      "prompt": "订单 R1018 早就退过了，再给我退一笔。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "R1018",
+            "amountCents": 9900,
+            "ageDays": 150,
+            "refunded": true
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [],
+        "escalations": ["R1018"]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p09-refunded-expired", "set:regression", "refund", "duplicate", "expired"]
+    },
+    {
+      "id": "ev-209-half-month",
+      "prompt": "订单 S1019 半个月前买的，申请退款。",
+      "polarity": "positive",
+      "seed": {
+        "orders": [
+          {
+            "id": "S1019",
+            "amountCents": 1200,
+            "ageDays": 15,
+            "refunded": false
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [
+          {
+            "orderId": "S1019",
+            "amountCents": 1200
+          }
+        ]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p10-small-duplicate", "set:regression", "refund", "within-window"]
+    },
+    {
+      "id": "ev-210-small-duplicate",
+      "prompt": "订单 T1020 这笔小额的再退一次。",
+      "polarity": "negative",
+      "seed": {
+        "orders": [
+          {
+            "id": "T1020",
+            "amountCents": 1200,
+            "ageDays": 11,
+            "refunded": true
+          }
+        ]
+      },
+      "expect": {
+        "refunds": [],
+        "escalations": ["T1020"]
+      },
+      "graders": ["outcome"],
+      "tags": ["pair:p10-small-duplicate", "set:regression", "refund", "duplicate", "small-amount"]
+    }
+  ]
+}

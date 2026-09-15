@@ -1,0 +1,24 @@
+# D8 实验用的 Postgres。MOCK=1 走内存实现时完全不需要它。
+#   docker compose up -d
+#   cd solution && DATABASE_URL=postgres://koda:koda@127.0.0.1:5508/koda pnpm start
+services:
+  postgres:
+    # 用 pgvector 而不是官方 postgres 镜像：它就是官方镜像加装了向量扩展，
+    # 现在多花零成本，省得 D12 做长期记忆时再换一次镜像、重灌一次数据。
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: koda
+      POSTGRES_PASSWORD: koda
+      POSTGRES_DB: koda
+    # 用 5508 避开课程主仓库的 5433、本机可能已有的 5432，以及其他几天实验占用的端口
+    ports: ['5508:5432']
+    healthcheck:
+      # 容器「启动了」不等于「能用了」：pg_isready 才是就绪信号
+      test: ['CMD-SHELL', 'pg_isready -U koda -d koda']
+      interval: 2s
+      timeout: 3s
+      retries: 15
+    volumes: ['koda-pg:/var/lib/postgresql/data']
+
+volumes:
+  koda-pg:

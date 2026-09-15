@@ -1,0 +1,19 @@
+# 跑实验产生的东西。不排除的话，任何人 clone 下来跑一遍
+# `pnpm install && pnpm start`，git status 就会被几万个文件淹没。
+node_modules/
+dist/
+.next/
+
+# 每个 lab 的运行产物目录（沙盒仓库、生成的素材、评估报告等）
+work/
+
+# 每个 lab 自己装依赖，锁文件因人而异，不入库
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# 本地配置：.env.example 是模板要入库，.env 是真实密钥绝不入库
+.env
+.env.local
+
+.DS_Store

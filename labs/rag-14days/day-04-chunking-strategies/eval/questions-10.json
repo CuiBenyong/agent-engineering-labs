@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q01",
+    "question": "开启单点登录之后，成员还能不能用密码登录？",
+    "answerDocIds": ["doc-002"],
+    "type": "single"
+  },
+  {
+    "id": "q02",
+    "question": "出差住在一线城市，每晚住宿费的报销上限是多少？",
+    "answerDocIds": ["doc-012"],
+    "type": "single"
+  },
+  {
+    "id": "q03",
+    "question": "生产发布的灰度分几批放量？每一批要观察多久？",
+    "answerDocIds": ["doc-020"],
+    "type": "single"
+  },
+  {
+    "id": "q04",
+    "question": "网盘单个文件最大能上传多大？",
+    "answerDocIds": ["doc-006", "doc-024"],
+    "type": "single"
+  },
+  {
+    "id": "q05",
+    "question": "离线编辑的文档同步回来时，同一段内容被别人改过，系统会怎么处理？",
+    "answerDocIds": ["doc-009"],
+    "type": "single"
+  },
+  {
+    "id": "q06",
+    "question": "生产数据库主备切换必须由谁书面审批？这个人叫什么名字？",
+    "answerDocIds": ["doc-019", "doc-014"],
+    "type": "multi"
+  },
+  {
+    "id": "q07",
+    "question": "把搜索索引的消费者从 4 个扩到 8 个，要走哪个流程、最晚提前几个工作日提单？",
+    "answerDocIds": ["doc-029", "doc-021"],
+    "type": "multi"
+  },
+  {
+    "id": "q08",
+    "question": "权限判定结果的缓存有效期是多久？成员权限变更时怎么处理？",
+    "answerDocIds": ["doc-018"],
+    "type": "single"
+  },
+  {
+    "id": "q09",
+    "question": "桌面同步客户端支持哪些操作系统？对系统版本有什么最低要求？",
+    "answerDocIds": [],
+    "type": "none"
+  },
+  {
+    "id": "q10",
+    "question": "云梯协作公有云的服务可用性承诺是百分之多少？",
+    "answerDocIds": [],
+    "type": "none"
+  }
+]

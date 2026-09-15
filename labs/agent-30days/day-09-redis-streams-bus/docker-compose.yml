@@ -1,0 +1,9 @@
+# 本实验自带的 Redis。MOCK=1 跑内存实现时完全用不到它；
+# 想看真 Redis 上的同一份业务代码时才需要 docker compose up -d。
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: day09-redis
+    ports:
+      - '6509:6379'
+    command: ['redis-server', '--appendonly', 'yes']

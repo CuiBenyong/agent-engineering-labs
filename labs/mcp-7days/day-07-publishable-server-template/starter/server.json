@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.your-username/docs",
+  "description": "一个内部文档库 MCP 服务端：搜索、按 slug 读取、新建。",
+  "repository": {
+    "url": "https://github.com/your-username/mcp-docs-server",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@your-username/mcp-docs-server",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

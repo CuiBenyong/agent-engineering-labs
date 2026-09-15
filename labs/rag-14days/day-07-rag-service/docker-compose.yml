@@ -1,0 +1,28 @@
+# D7 实验用的 PostgreSQL 16 + pgvector。端口按课程口径取 5500 + 天号（D7 的天号是 57）。
+#
+#   docker compose up -d        起库；第一次启动时自动执行 migrations/ 里的建表脚本
+#   docker compose down -v      连数据卷一起删掉，下次启动会重新跑一遍迁移
+#
+# initdb.d 的脚本**只在数据卷是空的时候跑一次**。所以服务端的 store.init() 里
+# 还留着一份等价的、可重复执行的建表语句：改了表结构之后不删卷也能追上。
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: rag14-day07-pg
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: rag
+      POSTGRES_DB: rag
+    ports:
+      - '5557:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U rag -d rag']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

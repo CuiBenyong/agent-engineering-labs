@@ -1,0 +1,341 @@
+{
+  "generatedAt": "2026-09-06T23:57:00.785Z",
+  "config": {
+    "corpusDocs": 30,
+    "chunks": 134,
+    "chunking": {
+      "maxChars": 500,
+      "minChars": 60,
+      "overlapChars": 60
+    },
+    "retrieval": {
+      "perRouteTopK": 8,
+      "weights": {
+        "bm25": 1,
+        "vector": 0.6
+      },
+      "gates": {
+        "bm25MinScore": 6,
+        "vectorMinCosine": 0.2
+      },
+      "bm25": {
+        "k1": 1.2,
+        "b": 0.75
+      }
+    },
+    "contextBudget": 600,
+    "candidateK": 20,
+    "ndcgK": 10,
+    "embedBackend": "mock-hash(384)",
+    "judge": "rule"
+  },
+  "goldenSet": {
+    "total": 20,
+    "coverage": {
+      "single": 12,
+      "multi": 4,
+      "none": 4
+    }
+  },
+  "retrieval": {
+    "answerable": 16,
+    "recall": 0.875,
+    "recallSingle": 1,
+    "recallMulti": 0.5,
+    "mrr": 1,
+    "ndcg": 0.6711,
+    "abstainRate": 0,
+    "avgContextTokens": 515.8
+  },
+  "generation": {
+    "faithfulness": 1,
+    "answerRelevancy": 0.3931,
+    "refusalOnNone": 0
+  },
+  "probes": [
+    {
+      "name": "照抄材料的回答应判为有支撑",
+      "faithfulness": 1,
+      "passed": true
+    },
+    {
+      "name": "与材料无关的编造应被抓出来",
+      "faithfulness": 0,
+      "passed": true
+    },
+    {
+      "name": "把数字改掉的回答应被抓出来（规则裁判的已知盲区）",
+      "faithfulness": 1,
+      "passed": false,
+      "blindSpot": true
+    }
+  ],
+  "agreement": {
+    "checked": 10,
+    "agreed": 10,
+    "rate": 1,
+    "disagreements": []
+  },
+  "perQuestion": [
+    {
+      "id": "q01",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.5834,
+      "contextDocIds": ["doc-002", "doc-023"],
+      "contextTokens": 424,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 开启单点登录后，默认仍然保留密码登录作为兜底通道[1]\n- 常见问题：登录不上怎么办 > 单点登录跳转失败[2]\n- 用之前保存的一次性恢复码登录，登录后立即重新绑定新设备并重新生成恢复码[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.4
+    },
+    {
+      "id": "q02",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.7227,
+      "contextDocIds": ["doc-012", "doc-006"],
+      "contextTokens": 478,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 住宿费按城市分三档：一线城市每晚上限 600 元，二线城市 450 元，其他城市 350 元[1]\n- 出差期间餐饮补贴按天计算，一线城市每天 120 元，其他城市每天 90 元，实行包干制，不需要提供发票，但当天有公司统一安排的餐食时该餐次不计补贴[2]\n- 网页端与移动端**单个文件的上传上限是 200 MB**[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.474
+    },
+    {
+      "id": "q03",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.9709,
+      "contextDocIds": ["doc-020", "doc-021"],
+      "contextTokens": 530,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 生产发布分四批：先 1% 流量，观察 15 分钟[1]\n- 回滚是发布的默认预案，任何一次发布都必须准备好回滚方案[2]\n- 发布流程与灰度策略 > 发布记录[3]\n- 发布流程与灰度策略 > 发布窗口[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.25
+    },
+    {
+      "id": "q04",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.7458,
+      "contextDocIds": ["doc-024", "doc-006"],
+      "contextTokens": 593,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 常见问题：文件上传失败与文件找回 > 提示「文件过大」[1]\n- 网页端与移动端**单个文件的上传上限是 200 MB**[2]\n- 系统不限制文件扩展名，但会对上传的文件做病毒扫描，扫描未通过的文件会被隔离并通知上传者[3]\n- 常见问题：文件上传失败与文件找回 > 上传到一半失败[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.2
+    },
+    {
+      "id": "q05",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.647,
+      "contextDocIds": ["doc-009", "doc-024", "doc-004"],
+      "contextTokens": 516,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 离线编辑同步回来时，如果同一段内容在离线期间被别人改过，系统不会自动丢弃任何一方，而是保留两个版本并在文档顶部插入一条冲突提示，由用户手动合并[1]\n- 常见问题：文件上传失败与文件找回 > 找不到别人分享给我的文件[2]\n- 任意两个版本之间可以做差异对比，新增内容标绿、删除内容标红[3]\n- 单篇文档同时在线编辑的人数上限是 50 人，超过之后新进入的人只能只读浏览[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.769
+    },
+    {
+      "id": "q06",
+      "type": "multi",
+      "hit": false,
+      "reciprocalRank": 1,
+      "ndcg": 0.2529,
+      "contextDocIds": ["doc-019", "doc-029", "doc-018"],
+      "contextTokens": 413,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 生产数据库主备切换：必须由平台组组长书面审批后执行[1]\n- 升级需要主备切换，属于高风险操作，按值班流程需要平台组组长书面审批[2]\n- 数据库与存储设计 > 缓存[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.524
+    },
+    {
+      "id": "q07",
+      "type": "multi",
+      "hit": false,
+      "reciprocalRank": 1,
+      "ndcg": 0.4104,
+      "contextDocIds": ["doc-029", "doc-011", "doc-026"],
+      "contextTokens": 510,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 周敏提出把索引更新的消费者从 4 个扩到 8 个，并把批量提交的窗口从 200 毫秒放宽到 500 毫秒[1]\n- 每位员工每月可申请最多 8 个工作日的远程办公，不需要说明理由，但需要提前一个工作日在系统里登记[2]\n- 基础版：紧急 4 小时，高 8 小时，中 1 个工作日，低 3 个工作日[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.444
+    },
+    {
+      "id": "q08",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.5531,
+      "contextDocIds": ["doc-018", "doc-024", "doc-023"],
+      "contextTokens": 585,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 权限判定结果的缓存有效期是 60 秒，成员权限变更时会主动失效相关键[1]\n- 搜索索引不是权威数据源，权限过滤在查询结果返回前由应用层二次校验[2]\n- 请提醒团队成员谨慎操作，重要目录建议只授予必要成员删除权限[3]\n- 常见问题：登录不上怎么办 > 双因素设备丢失[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.773
+    },
+    {
+      "id": "q09",
+      "type": "none",
+      "hit": false,
+      "reciprocalRank": 0,
+      "ndcg": 0,
+      "contextDocIds": ["doc-009", "doc-014", "doc-006"],
+      "contextTokens": 575,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 移动端与离线模式 > 支持的系统版本[1]\n- 客户端组**：负责网页端、移动端与桌面同步客户端[2]\n- 超过 200 MB 的文件建议拆分后上传，或者使用桌面同步客户端的分片上传通道[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.417
+    },
+    {
+      "id": "q10",
+      "type": "none",
+      "hit": false,
+      "reciprocalRank": 0,
+      "ndcg": 0,
+      "contextDocIds": ["doc-001"],
+      "contextTokens": 531,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 云梯协作提供公有云版本和私有化部署版本[1]\n- 云梯协作是云梯科技面向中小团队推出的一体化协作平台，把任务、文档、消息和文件放进同一个工作区，减少团队在多个工具之间来回搬运信息的成本[2]\n- 云梯协作产品总览 > 四个核心模块 > 任务板[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.118
+    },
+    {
+      "id": "q11",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.359,
+      "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+      "contextTokens": 419,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 年假按自然年计算，当年未休完的最多结转 5 天到次年，结转部分须在次年 3 月 31 日前休完，逾期作废[1]\n- 另有同事询问年假结转规则，答复是最多结转 5 天，须在次年 3 月 31 日前休完[2]\n- 超过 14 天的订阅原则上不退款，年付订阅中途降级或减少席位的部分同样不退[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.37
+    },
+    {
+      "id": "q12",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.9896,
+      "contextDocIds": ["doc-026"],
+      "contextTokens": 577,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 工单分级与响应时效 > 首次响应时效[1]\n- 工单超过首次响应时效仍未认领的，自动升级给技术支持组组长[2]\n- 工单分级与响应时效 > 服务时间[3]\n- 工单分级与响应时效 > 分级标准[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.118
+    },
+    {
+      "id": "q13",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.9818,
+      "contextDocIds": ["doc-022"],
+      "contextTokens": 579,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 生产日志保留 30 天，审计日志保留 180 天，指标数据按 1 分钟粒度保留 15 天、5 分钟粒度保留 90 天、1 小时粒度保留 2 年[1]\n- 监控告警与日志规范 > 日志规范[2]\n- 监控告警与日志规范 > 告警原则[3]\n- 监控告警与日志规范 > 指标分层[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.417
+    },
+    {
+      "id": "q14",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.8928,
+      "contextDocIds": ["doc-010", "doc-002"],
+      "contextTokens": 535,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 个人访问令牌适合脚本和内部工具，令牌默认有效期 90 天，创建时可以选择更短的有效期但不能更长[1]\n- 管理员可以在安全设置里把网页端会话有效期调短，最短 1 天，但不能调长到 14 天以上[2]\n- 开放 API 的默认限流是每个令牌每分钟 60 次请求[3]\n- 集成与开放 API 概览 > 沙箱环境[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.63
+    },
+    {
+      "id": "q15",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.5414,
+      "contextDocIds": ["doc-017", "doc-024", "doc-012"],
+      "contextTokens": 435,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 同步调用走内部 HTTP 接口，超时统一设置为 3 秒，重试最多 1 次且只对幂等接口重试[1]\n- 批量上传时一个文件失败不会影响其他文件，失败的那个会在列表里标红，点击可以单独重试[2]\n- 每月 25 日是当月报销单的截止提交日，25 日之后提交的单据计入下个月的付款批次[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.333
+    },
+    {
+      "id": "q16",
+      "type": "single",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.9558,
+      "contextDocIds": ["doc-008", "doc-004"],
+      "contextTokens": 491,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 同一个工作区在 24 小时内最多发起 3 次全量导出，这是为了避免打包任务把存储带宽占满[1]\n- 只有工作区管理员可以发起全量数据导出[2]\n- 批量导出整个文档目录属于数据导出能力，走另一套流程，见《数据导出与备份》[3]\n- 数据导出与备份 > 导出内容与格式[4]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.484
+    },
+    {
+      "id": "q17",
+      "type": "multi",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.3833,
+      "contextDocIds": ["doc-022", "doc-021", "doc-011"],
+      "contextTokens": 406,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 排查特定问题时可以临时把某个工作区的采样率提到 100%，但属于二级变更，需要按《变更评审规范》处理[1]\n- 二级变更必须提交变更评审会，且需提前 2 个工作日提单[2]\n- 每位员工每月可申请最多 8 个工作日的远程办公，不需要说明理由，但需要提前一个工作日在系统里登记[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.515
+    },
+    {
+      "id": "q18",
+      "type": "multi",
+      "hit": true,
+      "reciprocalRank": 1,
+      "ndcg": 0.747,
+      "contextDocIds": ["doc-029", "doc-014"],
+      "contextTokens": 569,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 行动项：质量保障组补充接口层的查询次数断言，超过阈值直接判失败[1]\n- 质量保障组**：负责测试、发布验收与线上质量指标[2]\n- 会上确认这属于二级变更，需按《变更评审规范》在周三的变更评审会上提单，不能在架构评审会上直接拍板执行[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.37
+    },
+    {
+      "id": "q19",
+      "type": "none",
+      "hit": false,
+      "reciprocalRank": 0,
+      "ndcg": 0,
+      "contextDocIds": ["doc-005", "doc-023"],
+      "contextTokens": 563,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 基础版|\t29\t|10 GB / 团队|\t5 个\t|30 个版本|\t不支持[1]\n- 提交工单时请附上：出错时间、浏览器与版本、完整报错截图、账号邮箱[2]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.211
+    },
+    {
+      "id": "q20",
+      "type": "none",
+      "hit": false,
+      "reciprocalRank": 0,
+      "ndcg": 0,
+      "contextDocIds": ["doc-001", "doc-005", "doc-008"],
+      "contextTokens": 587,
+      "admitted": true,
+      "answer": "根据检索到的资料：\n- 云梯协作提供公有云版本和私有化部署版本[1]\n- 企业版价格面议，团队总存储从 1 TB 起，任务板与文档版本均不限，支持单点登录与私有化部署，最低起订 50 个席位[2]\n- 私有化部署版本的备份由客户自行负责，云梯科技只提供备份脚本与恢复文档，不承担数据丢失责任[3]",
+      "faithfulness": 1,
+      "answerRelevancy": 0.045
+    }
+  ]
+}

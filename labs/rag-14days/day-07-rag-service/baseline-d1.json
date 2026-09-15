@@ -1,0 +1,277 @@
+{
+  "generatedAt": "2026-09-06T15:27:23.622Z",
+  "retriever": "bm25",
+  "params": {
+    "k1": 1.2,
+    "b": 0.75,
+    "topK": 3,
+    "minScore": 6
+  },
+  "corpus": {
+    "docCount": 30,
+    "avgTokens": 413.8
+  },
+  "questions": [
+    {
+      "id": "b01",
+      "question": "单个文件最大能上传多大？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-024",
+          "score": 9.1103,
+          "title": "常见问题：文件上传失败与文件找回",
+          "department": "support"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-006",
+          "score": 8.8481,
+          "title": "网盘与文件管理：上传限制、分享与回收站",
+          "department": "product"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-008",
+          "score": 5.8225,
+          "title": "数据导出与备份",
+          "department": "product"
+        }
+      ],
+      "used": ["doc-024", "doc-006"],
+      "refused": false
+    },
+    {
+      "id": "b02",
+      "question": "删掉的文件在回收站里能保留多久？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-006",
+          "score": 18.7862,
+          "title": "网盘与文件管理：上传限制、分享与回收站",
+          "department": "product"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-024",
+          "score": 10.2812,
+          "title": "常见问题：文件上传失败与文件找回",
+          "department": "support"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-018",
+          "score": 7.741,
+          "title": "数据库与存储设计",
+          "department": "eng"
+        }
+      ],
+      "used": ["doc-006", "doc-024", "doc-018"],
+      "refused": false
+    },
+    {
+      "id": "b03",
+      "question": "生产数据库主备切换需要谁审批？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-019",
+          "score": 20.6894,
+          "title": "值班与故障响应流程",
+          "department": "eng"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-029",
+          "score": 10.5136,
+          "title": "架构评审会纪要 2026-07-30",
+          "department": "eng"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-017",
+          "score": 5.5311,
+          "title": "系统架构总览",
+          "department": "eng"
+        }
+      ],
+      "used": ["doc-019", "doc-029"],
+      "refused": false
+    },
+    {
+      "id": "b04",
+      "question": "变更评审会什么时候开，二级变更要提前几天提单？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-021",
+          "score": 23.3143,
+          "title": "变更评审规范",
+          "department": "eng"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-029",
+          "score": 17.3085,
+          "title": "架构评审会纪要 2026-07-30",
+          "department": "eng"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-022",
+          "score": 11.8772,
+          "title": "监控告警与日志规范",
+          "department": "eng"
+        }
+      ],
+      "used": ["doc-021", "doc-029", "doc-022"],
+      "refused": false
+    },
+    {
+      "id": "b05",
+      "question": "开放 API 的默认限流是多少？超了会返回什么状态码？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-010",
+          "score": 28.9462,
+          "title": "集成与开放 API 概览",
+          "department": "product"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-001",
+          "score": 5.2209,
+          "title": "云梯协作产品总览",
+          "department": "product"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-022",
+          "score": 4.4162,
+          "title": "监控告警与日志规范",
+          "department": "eng"
+        }
+      ],
+      "used": ["doc-010"],
+      "refused": false
+    },
+    {
+      "id": "b06",
+      "question": "年假最多能结转几天到第二年？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-016",
+          "score": 11.2869,
+          "title": "请假与调休规则",
+          "department": "hr"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-030",
+          "score": 6.5341,
+          "title": "全员季度沟通会纪要 2026-06-25",
+          "department": "hr"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-007",
+          "score": 6.2234,
+          "title": "消息与通知：频道、免打扰与提醒规则",
+          "department": "product"
+        }
+      ],
+      "used": ["doc-016", "doc-030", "doc-007"],
+      "refused": false
+    },
+    {
+      "id": "b07",
+      "question": "P0 故障要求多久之内响应？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-019",
+          "score": 15.4887,
+          "title": "值班与故障响应流程",
+          "department": "eng"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-026",
+          "score": 4.7828,
+          "title": "工单分级与响应时效",
+          "department": "support"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-021",
+          "score": 4.4463,
+          "title": "变更评审规范",
+          "department": "eng"
+        }
+      ],
+      "used": ["doc-019"],
+      "refused": false
+    },
+    {
+      "id": "b08",
+      "question": "公司每年团建预算是多少？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-028",
+          "score": 3.1987,
+          "title": "产品周会纪要 2026-08-12",
+          "department": "product"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-016",
+          "score": 3.1046,
+          "title": "请假与调休规则",
+          "department": "hr"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-013",
+          "score": 3.0678,
+          "title": "信息安全与保密制度",
+          "department": "hr"
+        }
+      ],
+      "used": [],
+      "refused": true
+    },
+    {
+      "id": "b09",
+      "question": "云梯科技给员工报销手机话费吗？",
+      "hits": [
+        {
+          "rank": 1,
+          "docId": "doc-012",
+          "score": 9.4078,
+          "title": "报销与差旅制度",
+          "department": "hr"
+        },
+        {
+          "rank": 2,
+          "docId": "doc-011",
+          "score": 7.2249,
+          "title": "员工手册：考勤与弹性工作制",
+          "department": "hr"
+        },
+        {
+          "rank": 3,
+          "docId": "doc-030",
+          "score": 6.1672,
+          "title": "全员季度沟通会纪要 2026-06-25",
+          "department": "hr"
+        }
+      ],
+      "used": ["doc-012", "doc-011", "doc-030"],
+      "refused": false
+    }
+  ]
+}

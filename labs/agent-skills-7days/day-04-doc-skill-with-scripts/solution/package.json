@@ -1,0 +1,21 @@
+{
+  "name": "agent-skills-7days-day-04-doc-skill-with-scripts-solution",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "analyze": "tsx skill/release-report/scripts/cli.ts analyze",
+    "validate": "tsx skill/release-report/scripts/cli.ts validate",
+    "fill": "tsx skill/release-report/scripts/cli.ts fill"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

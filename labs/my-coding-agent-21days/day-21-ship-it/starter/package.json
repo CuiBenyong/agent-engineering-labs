@@ -1,0 +1,36 @@
+{
+  "name": "my-coding-agent-21days-day-21-ship-it-starter",
+  "version": "0.1.0",
+  "description": "mca —— 一个手写的终端 Coding Agent（21 天课程的最终产物）",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "mca": "bin/mca.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "files": [
+    "bin/mca.mjs",
+    "dist/index.js",
+    "dist/cli.js",
+    "skills",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs",
+    "verify:pack": "node scripts/verify-pack.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,2968 @@
+{
+  "generatedAt": "2026-09-07T04:29:31.430Z",
+  "mock": true,
+  "corpus": {
+    "docCount": 30
+  },
+  "goldenSet": 20,
+  "indexes": [
+    {
+      "name": "D9 配置（平铺块）",
+      "chunkCount": 134,
+      "indexTokens": 18036,
+      "recall": 0.9375,
+      "recallSingle": 1,
+      "recallMulti": 0.75,
+      "avgBestRank": 2.44,
+      "ndcg": 0.6438,
+      "avgContextTokens": 539,
+      "avgUsedUnits": 3.4,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-002", "doc-005"],
+          "contextTokens": 599,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-012", "doc-006", "doc-004"],
+          "contextTokens": 589,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-020", "doc-013", "doc-021"],
+          "contextTokens": 553,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-006", "doc-024"],
+          "contextTokens": 507,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 568,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "contextDocIds": ["doc-019", "doc-029", "doc-013"],
+          "contextTokens": 512,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-021", "doc-017"],
+          "contextTokens": 517,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-018", "doc-024", "doc-023", "doc-017"],
+          "contextTokens": 576,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-006", "doc-014", "doc-009"],
+          "contextTokens": 575,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-001", "doc-008"],
+          "contextTokens": 581,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+          "contextTokens": 419,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 502,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021"],
+          "contextTokens": 542,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 566,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-017", "doc-029"],
+          "contextTokens": 459,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-008", "doc-017"],
+          "contextTokens": 539,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-029"],
+          "contextTokens": 590,
+          "usedUnits": 4,
+          "bestRank": 2
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 569,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-005", "doc-023", "doc-009"],
+          "contextTokens": 563,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-005", "doc-001"],
+          "contextTokens": 446,
+          "usedUnits": 2,
+          "bestRank": 21
+        }
+      ]
+    },
+    {
+      "name": "父子索引",
+      "chunkCount": 158,
+      "indexTokens": 18680,
+      "recall": 0.9375,
+      "recallSingle": 1,
+      "recallMulti": 0.75,
+      "avgBestRank": 2.44,
+      "ndcg": 0.6113,
+      "avgContextTokens": 532,
+      "avgUsedUnits": 3.5,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-002", "doc-005"],
+          "contextTokens": 599,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 478,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-020", "doc-013", "doc-021"],
+          "contextTokens": 553,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-006", "doc-024"],
+          "contextTokens": 468,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 568,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "contextDocIds": ["doc-019", "doc-029", "doc-013"],
+          "contextTokens": 488,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-021", "doc-011"],
+          "contextTokens": 494,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-018", "doc-024", "doc-021"],
+          "contextTokens": 597,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-006", "doc-014", "doc-009"],
+          "contextTokens": 534,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-001", "doc-008", "doc-017"],
+          "contextTokens": 557,
+          "usedUnits": 4,
+          "bestRank": 21
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027", "doc-022"],
+          "contextTokens": 565,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 502,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021"],
+          "contextTokens": 460,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 566,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-017", "doc-029"],
+          "contextTokens": 459,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-008", "doc-017", "doc-026"],
+          "contextTokens": 525,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-029"],
+          "contextTokens": 590,
+          "usedUnits": 4,
+          "bestRank": 2
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 528,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-023", "doc-009", "doc-005"],
+          "contextTokens": 533,
+          "usedUnits": 4,
+          "bestRank": 21
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-005", "doc-001", "doc-022"],
+          "contextTokens": 582,
+          "usedUnits": 3,
+          "bestRank": 21
+        }
+      ]
+    },
+    {
+      "name": "上下文检索（平铺块+块头）",
+      "chunkCount": 134,
+      "indexTokens": 22339,
+      "recall": 0.9375,
+      "recallSingle": 1,
+      "recallMulti": 0.75,
+      "avgBestRank": 2.44,
+      "ndcg": 0.7218,
+      "avgContextTokens": 500,
+      "avgUsedUnits": 2.6,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-002"],
+          "contextTokens": 507,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 569,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-020"],
+          "contextTokens": 562,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-006", "doc-024"],
+          "contextTokens": 418,
+          "usedUnits": 2,
+          "bestRank": 1
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 479,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "contextDocIds": ["doc-019", "doc-029"],
+          "contextTokens": 408,
+          "usedUnits": 2,
+          "bestRank": 21
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-021"],
+          "contextTokens": 448,
+          "usedUnits": 2,
+          "bestRank": 2
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-018", "doc-024", "doc-023"],
+          "contextTokens": 494,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-006", "doc-014"],
+          "contextTokens": 536,
+          "usedUnits": 2,
+          "bestRank": 21
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-001"],
+          "contextTokens": 515,
+          "usedUnits": 2,
+          "bestRank": 21
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+          "contextTokens": 532,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 593,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021"],
+          "contextTokens": 477,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 529,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-017", "doc-024"],
+          "contextTokens": 565,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-008", "doc-017"],
+          "contextTokens": 443,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011"],
+          "contextTokens": 501,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 466,
+          "usedUnits": 2,
+          "bestRank": 2
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-009", "doc-005"],
+          "contextTokens": 454,
+          "usedUnits": 2,
+          "bestRank": 21
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-005", "doc-001"],
+          "contextTokens": 512,
+          "usedUnits": 2,
+          "bestRank": 21
+        }
+      ]
+    },
+    {
+      "name": "父子索引+块头",
+      "chunkCount": 158,
+      "indexTokens": 23782,
+      "recall": 0.9375,
+      "recallSingle": 1,
+      "recallMulti": 0.75,
+      "avgBestRank": 2.44,
+      "ndcg": 0.6991,
+      "avgContextTokens": 533,
+      "avgUsedUnits": 3.8,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-002", "doc-023"],
+          "contextTokens": 593,
+          "usedUnits": 5,
+          "bestRank": 1
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 478,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-020"],
+          "contextTokens": 442,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-006", "doc-024"],
+          "contextTokens": 554,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 568,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "contextDocIds": ["doc-019", "doc-029", "doc-013"],
+          "contextTokens": 488,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-021", "doc-011"],
+          "contextTokens": 494,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-018", "doc-024", "doc-021", "doc-023"],
+          "contextTokens": 537,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-006", "doc-014", "doc-009"],
+          "contextTokens": 534,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-001", "doc-008"],
+          "contextTokens": 447,
+          "usedUnits": 4,
+          "bestRank": 21
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027", "doc-022"],
+          "contextTokens": 565,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 577,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021", "doc-017"],
+          "contextTokens": 563,
+          "usedUnits": 5,
+          "bestRank": 1
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 566,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-017", "doc-024", "doc-027"],
+          "contextTokens": 591,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-008", "doc-017"],
+          "contextTokens": 483,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-029"],
+          "contextTokens": 590,
+          "usedUnits": 4,
+          "bestRank": 2
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 511,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-009", "doc-023", "doc-005"],
+          "contextTokens": 533,
+          "usedUnits": 4,
+          "bestRank": 21
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-005", "doc-001", "doc-008"],
+          "contextTokens": 539,
+          "usedUnits": 3,
+          "bestRank": 21
+        }
+      ]
+    },
+    {
+      "name": "上下文检索（块头只进索引）",
+      "chunkCount": 134,
+      "indexTokens": 22339,
+      "recall": 0.9375,
+      "recallSingle": 1,
+      "recallMulti": 0.75,
+      "avgBestRank": 2.44,
+      "ndcg": 0.7218,
+      "avgContextTokens": 536,
+      "avgUsedUnits": 3.5,
+      "perQuestion": [
+        {
+          "id": "q01",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-002", "doc-023"],
+          "contextTokens": 593,
+          "usedUnits": 5,
+          "bestRank": 1
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-012", "doc-006"],
+          "contextTokens": 478,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-020"],
+          "contextTokens": 442,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-006", "doc-024"],
+          "contextTokens": 593,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-009", "doc-004"],
+          "contextTokens": 568,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q06",
+          "type": "multi",
+          "hit": false,
+          "contextDocIds": ["doc-019", "doc-029", "doc-013"],
+          "contextTokens": 512,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q07",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-021", "doc-011"],
+          "contextTokens": 494,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-018", "doc-024", "doc-023", "doc-021"],
+          "contextTokens": 595,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q09",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-006", "doc-014", "doc-009"],
+          "contextTokens": 575,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q10",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-001", "doc-008"],
+          "contextTokens": 581,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+          "contextTokens": 419,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-026"],
+          "contextTokens": 577,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q13",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021"],
+          "contextTokens": 542,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q14",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-010", "doc-002"],
+          "contextTokens": 566,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q15",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-017", "doc-024"],
+          "contextTokens": 488,
+          "usedUnits": 3,
+          "bestRank": 1
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "hit": true,
+          "contextDocIds": ["doc-008", "doc-017"],
+          "contextTokens": 539,
+          "usedUnits": 4,
+          "bestRank": 1
+        },
+        {
+          "id": "q17",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-029"],
+          "contextTokens": 590,
+          "usedUnits": 4,
+          "bestRank": 2
+        },
+        {
+          "id": "q18",
+          "type": "multi",
+          "hit": true,
+          "contextDocIds": ["doc-029", "doc-014"],
+          "contextTokens": 552,
+          "usedUnits": 3,
+          "bestRank": 2
+        },
+        {
+          "id": "q19",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-009", "doc-005", "doc-023"],
+          "contextTokens": 563,
+          "usedUnits": 3,
+          "bestRank": 21
+        },
+        {
+          "id": "q20",
+          "type": "none",
+          "hit": false,
+          "contextDocIds": ["doc-005", "doc-001"],
+          "contextTokens": 446,
+          "usedUnits": 2,
+          "bestRank": 21
+        }
+      ]
+    }
+  ],
+  "headerByRoute": {
+    "纯 BM25": [
+      {
+        "name": "纯 BM25 / ① 裸块（无任何上下文）",
+        "chunkCount": 134,
+        "indexTokens": 15638,
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "avgBestRank": 2.44,
+        "ndcg": 0.5854,
+        "avgContextTokens": 546,
+        "avgUsedUnits": 4.2,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-028", "doc-005"],
+            "contextTokens": 484,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-006", "doc-004"],
+            "contextTokens": 526,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-021", "doc-017", "doc-013"],
+            "contextTokens": 536,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-024", "doc-006", "doc-009"],
+            "contextTokens": 579,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-004", "doc-001"],
+            "contextTokens": 598,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-029", "doc-017", "doc-013"],
+            "contextTokens": 535,
+            "usedUnits": 4,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021", "doc-018", "doc-017"],
+            "contextTokens": 528,
+            "usedUnits": 4,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-024", "doc-009", "doc-017", "doc-008"],
+            "contextTokens": 599,
+            "usedUnits": 6,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-006", "doc-014"],
+            "contextTokens": 438,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-008", "doc-017"],
+            "contextTokens": 525,
+            "usedUnits": 4,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-027", "doc-022", "doc-015"],
+            "contextTokens": 558,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026", "doc-030", "doc-014"],
+            "contextTokens": 549,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-010", "doc-021", "doc-017"],
+            "contextTokens": 543,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002", "doc-007", "doc-006"],
+            "contextTokens": 598,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-027", "doc-024"],
+            "contextTokens": 565,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-004", "doc-017", "doc-009"],
+            "contextTokens": 560,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-027", "doc-029"],
+            "contextTokens": 599,
+            "usedUnits": 5,
+            "bestRank": 2
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-014"],
+            "contextTokens": 489,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-023", "doc-005", "doc-002", "doc-009"],
+            "contextTokens": 574,
+            "usedUnits": 4,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-005", "doc-008"],
+            "contextTokens": 538,
+            "usedUnits": 3,
+            "bestRank": 21
+          }
+        ]
+      },
+      {
+        "name": "纯 BM25 / ② 标题路径（D9 基线）",
+        "chunkCount": 134,
+        "indexTokens": 18036,
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "avgBestRank": 2.44,
+        "ndcg": 0.6753,
+        "avgContextTokens": 536,
+        "avgUsedUnits": 3.6,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-005"],
+            "contextTokens": 599,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-006", "doc-004"],
+            "contextTokens": 589,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-021", "doc-017"],
+            "contextTokens": 545,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-024", "doc-006"],
+            "contextTokens": 593,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-004"],
+            "contextTokens": 388,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-029", "doc-017"],
+            "contextTokens": 425,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021", "doc-018", "doc-017"],
+            "contextTokens": 599,
+            "usedUnits": 4,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-024", "doc-023", "doc-009"],
+            "contextTokens": 467,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-006", "doc-009", "doc-014"],
+            "contextTokens": 575,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-008"],
+            "contextTokens": 581,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-027", "doc-022"],
+            "contextTokens": 565,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026", "doc-030"],
+            "contextTokens": 524,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022"],
+            "contextTokens": 491,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002"],
+            "contextTokens": 566,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-027"],
+            "contextTokens": 478,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-004"],
+            "contextTokens": 491,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-027"],
+            "contextTokens": 518,
+            "usedUnits": 4,
+            "bestRank": 2
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-014"],
+            "contextTokens": 569,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-023", "doc-009", "doc-005"],
+            "contextTokens": 563,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-005", "doc-008"],
+            "contextTokens": 587,
+            "usedUnits": 3,
+            "bestRank": 21
+          }
+        ]
+      },
+      {
+        "name": "纯 BM25 / ③ 上下文块头",
+        "chunkCount": 134,
+        "indexTokens": 22339,
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "avgBestRank": 2.44,
+        "ndcg": 0.7312,
+        "avgContextTokens": 510,
+        "avgUsedUnits": 2.9,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002"],
+            "contextTokens": 507,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-006"],
+            "contextTokens": 569,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-021"],
+            "contextTokens": 557,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-006", "doc-024"],
+            "contextTokens": 532,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-004"],
+            "contextTokens": 479,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-029", "doc-017"],
+            "contextTokens": 534,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021", "doc-018"],
+            "contextTokens": 550,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-024", "doc-023"],
+            "contextTokens": 427,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-006", "doc-009"],
+            "contextTokens": 371,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001"],
+            "contextTokens": 515,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+            "contextTokens": 532,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026"],
+            "contextTokens": 495,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022"],
+            "contextTokens": 496,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002"],
+            "contextTokens": 529,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-027"],
+            "contextTokens": 556,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008"],
+            "contextTokens": 591,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-011"],
+            "contextTokens": 501,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-014"],
+            "contextTokens": 466,
+            "usedUnits": 2,
+            "bestRank": 2
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-023", "doc-004", "doc-009"],
+            "contextTokens": 479,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-005"],
+            "contextTokens": 512,
+            "usedUnits": 2,
+            "bestRank": 21
+          }
+        ]
+      }
+    ],
+    "纯向量": [
+      {
+        "name": "纯向量 / ① 裸块（无任何上下文）",
+        "chunkCount": 134,
+        "indexTokens": 15638,
+        "recall": 0.8125,
+        "recallSingle": 1,
+        "recallMulti": 0.25,
+        "avgBestRank": 3.75,
+        "ndcg": 0.4152,
+        "avgContextTokens": 498,
+        "avgUsedUnits": 4.2,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-004", "doc-028", "doc-027", "doc-023"],
+            "contextTokens": 469,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-026", "doc-021", "doc-018"],
+            "contextTokens": 488,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-017", "doc-021", "doc-013"],
+            "contextTokens": 578,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-024", "doc-006", "doc-020"],
+            "contextTokens": 535,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-026", "doc-016", "doc-010"],
+            "contextTokens": 538,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-026"],
+            "contextTokens": 340,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-011", "doc-021", "doc-026"],
+            "contextTokens": 511,
+            "usedUnits": 4,
+            "bestRank": 3
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-008", "doc-014", "doc-001", "doc-013", "doc-007"],
+            "contextTokens": 546,
+            "usedUnits": 6,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-025", "doc-004"],
+            "contextTokens": 336,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-013", "doc-027", "doc-023", "doc-007"],
+            "contextTokens": 504,
+            "usedUnits": 5,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-021", "doc-029"],
+            "contextTokens": 440,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-030", "doc-026", "doc-014"],
+            "contextTokens": 443,
+            "usedUnits": 4,
+            "bestRank": 2
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-028", "doc-004", "doc-002", "doc-025"],
+            "contextTokens": 474,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002", "doc-008", "doc-013"],
+            "contextTokens": 595,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-012", "doc-007", "doc-020"],
+            "contextTokens": 517,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-001", "doc-004", "doc-027"],
+            "contextTokens": 460,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-022", "doc-011", "doc-016"],
+            "contextTokens": 542,
+            "usedUnits": 5,
+            "bestRank": 8
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-022", "doc-015", "doc-028"],
+            "contextTokens": 582,
+            "usedUnits": 4,
+            "bestRank": 15
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-005", "doc-025"],
+            "contextTokens": 552,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-009", "doc-028"],
+            "contextTokens": 510,
+            "usedUnits": 4,
+            "bestRank": 21
+          }
+        ]
+      },
+      {
+        "name": "纯向量 / ② 标题路径（D9 基线）",
+        "chunkCount": 134,
+        "indexTokens": 18036,
+        "recall": 0.8125,
+        "recallSingle": 1,
+        "recallMulti": 0.25,
+        "avgBestRank": 2.94,
+        "ndcg": 0.5088,
+        "avgContextTokens": 534,
+        "avgUsedUnits": 3.8,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-004", "doc-023"],
+            "contextTokens": 523,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-026", "doc-021"],
+            "contextTokens": 463,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-017", "doc-021"],
+            "contextTokens": 545,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-024", "doc-006"],
+            "contextTokens": 593,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-026", "doc-012"],
+            "contextTokens": 579,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-026"],
+            "contextTokens": 387,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-011", "doc-026", "doc-021"],
+            "contextTokens": 598,
+            "usedUnits": 4,
+            "bestRank": 4
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-008", "doc-026", "doc-021"],
+            "contextTokens": 546,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-025", "doc-004", "doc-012"],
+            "contextTokens": 473,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-027", "doc-013"],
+            "contextTokens": 569,
+            "usedUnits": 4,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-021", "doc-029"],
+            "contextTokens": 529,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026", "doc-030"],
+            "contextTokens": 507,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-025", "doc-002"],
+            "contextTokens": 487,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002", "doc-008"],
+            "contextTokens": 571,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-012", "doc-007", "doc-023"],
+            "contextTokens": 590,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-004", "doc-001", "doc-024"],
+            "contextTokens": 568,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-022", "doc-011", "doc-016"],
+            "contextTokens": 557,
+            "usedUnits": 4,
+            "bestRank": 5
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-022", "doc-015", "doc-029"],
+            "contextTokens": 574,
+            "usedUnits": 4,
+            "bestRank": 5
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-005", "doc-007"],
+            "contextTokens": 532,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-028", "doc-011"],
+            "contextTokens": 479,
+            "usedUnits": 3,
+            "bestRank": 21
+          }
+        ]
+      },
+      {
+        "name": "纯向量 / ③ 上下文块头",
+        "chunkCount": 134,
+        "indexTokens": 22339,
+        "recall": 0.875,
+        "recallSingle": 1,
+        "recallMulti": 0.5,
+        "avgBestRank": 3,
+        "ndcg": 0.6185,
+        "avgContextTokens": 512,
+        "avgUsedUnits": 3,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-004"],
+            "contextTokens": 595,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-026", "doc-021"],
+            "contextTokens": 550,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020"],
+            "contextTokens": 562,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-006", "doc-024"],
+            "contextTokens": 532,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-026", "doc-012"],
+            "contextTokens": 535,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019"],
+            "contextTokens": 220,
+            "usedUnits": 1,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021", "doc-020"],
+            "contextTokens": 466,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-026", "doc-021"],
+            "contextTokens": 580,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-012", "doc-009", "doc-004"],
+            "contextTokens": 482,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001"],
+            "contextTokens": 308,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-021", "doc-030"],
+            "contextTokens": 489,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026"],
+            "contextTokens": 484,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-025"],
+            "contextTokens": 512,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002"],
+            "contextTokens": 529,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-012", "doc-023"],
+            "contextTokens": 537,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-004", "doc-024"],
+            "contextTokens": 584,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-011", "doc-021"],
+            "contextTokens": 541,
+            "usedUnits": 3,
+            "bestRank": 3
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-015", "doc-029", "doc-026"],
+            "contextTokens": 561,
+            "usedUnits": 3,
+            "bestRank": 10
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-007", "doc-005"],
+            "contextTokens": 592,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-011", "doc-013", "doc-001", "doc-016"],
+            "contextTokens": 590,
+            "usedUnits": 4,
+            "bestRank": 21
+          }
+        ]
+      }
+    ],
+    "混合检索": [
+      {
+        "name": "混合检索 / ① 裸块（无任何上下文）",
+        "chunkCount": 134,
+        "indexTokens": 15638,
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "avgBestRank": 2.44,
+        "ndcg": 0.553,
+        "avgContextTokens": 516,
+        "avgUsedUnits": 3.8,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-005"],
+            "contextTokens": 560,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-006", "doc-004"],
+            "contextTokens": 526,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-021", "doc-013"],
+            "contextTokens": 552,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-024", "doc-006", "doc-009"],
+            "contextTokens": 579,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-004", "doc-006"],
+            "contextTokens": 558,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-029", "doc-017"],
+            "contextTokens": 513,
+            "usedUnits": 4,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021", "doc-017", "doc-011"],
+            "contextTokens": 558,
+            "usedUnits": 4,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-017", "doc-021", "doc-024"],
+            "contextTokens": 534,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-006", "doc-014"],
+            "contextTokens": 438,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-008"],
+            "contextTokens": 523,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+            "contextTokens": 353,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026", "doc-030", "doc-014"],
+            "contextTokens": 549,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-017", "doc-004"],
+            "contextTokens": 597,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002", "doc-001"],
+            "contextTokens": 488,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-029"],
+            "contextTokens": 405,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-017", "doc-004", "doc-002"],
+            "contextTokens": 500,
+            "usedUnits": 5,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-029", "doc-011", "doc-027"],
+            "contextTokens": 599,
+            "usedUnits": 5,
+            "bestRank": 2
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-014", "doc-029"],
+            "contextTokens": 489,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-023", "doc-005"],
+            "contextTokens": 420,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-005", "doc-001", "doc-022"],
+            "contextTokens": 571,
+            "usedUnits": 3,
+            "bestRank": 21
+          }
+        ]
+      },
+      {
+        "name": "混合检索 / ② 标题路径（D9 基线）",
+        "chunkCount": 134,
+        "indexTokens": 18036,
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "avgBestRank": 2.44,
+        "ndcg": 0.6438,
+        "avgContextTokens": 539,
+        "avgUsedUnits": 3.4,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002", "doc-005"],
+            "contextTokens": 599,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-006", "doc-004"],
+            "contextTokens": 589,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020", "doc-013", "doc-021"],
+            "contextTokens": 553,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-006", "doc-024"],
+            "contextTokens": 507,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-004"],
+            "contextTokens": 568,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-029", "doc-013"],
+            "contextTokens": 512,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021", "doc-017"],
+            "contextTokens": 517,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-024", "doc-023", "doc-017"],
+            "contextTokens": 576,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-006", "doc-014", "doc-009"],
+            "contextTokens": 575,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001", "doc-008"],
+            "contextTokens": 581,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+            "contextTokens": 419,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026"],
+            "contextTokens": 502,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021"],
+            "contextTokens": 542,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002"],
+            "contextTokens": 566,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-029"],
+            "contextTokens": 459,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-017"],
+            "contextTokens": 539,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-011", "doc-029"],
+            "contextTokens": 590,
+            "usedUnits": 4,
+            "bestRank": 2
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-014"],
+            "contextTokens": 569,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-005", "doc-023", "doc-009"],
+            "contextTokens": 563,
+            "usedUnits": 3,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-005", "doc-001"],
+            "contextTokens": 446,
+            "usedUnits": 2,
+            "bestRank": 21
+          }
+        ]
+      },
+      {
+        "name": "混合检索 / ③ 上下文块头",
+        "chunkCount": 134,
+        "indexTokens": 22339,
+        "recall": 0.9375,
+        "recallSingle": 1,
+        "recallMulti": 0.75,
+        "avgBestRank": 2.44,
+        "ndcg": 0.7218,
+        "avgContextTokens": 500,
+        "avgUsedUnits": 2.6,
+        "perQuestion": [
+          {
+            "id": "q01",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-002"],
+            "contextTokens": 507,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q02",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-012", "doc-006"],
+            "contextTokens": 569,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q03",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-020"],
+            "contextTokens": 562,
+            "usedUnits": 4,
+            "bestRank": 1
+          },
+          {
+            "id": "q04",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-006", "doc-024"],
+            "contextTokens": 418,
+            "usedUnits": 2,
+            "bestRank": 1
+          },
+          {
+            "id": "q05",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-009", "doc-004"],
+            "contextTokens": 479,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q06",
+            "type": "multi",
+            "hit": false,
+            "contextDocIds": ["doc-019", "doc-029"],
+            "contextTokens": 408,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q07",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-021"],
+            "contextTokens": 448,
+            "usedUnits": 2,
+            "bestRank": 2
+          },
+          {
+            "id": "q08",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-018", "doc-024", "doc-023"],
+            "contextTokens": 494,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q09",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-006", "doc-014"],
+            "contextTokens": 536,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q10",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-001"],
+            "contextTokens": 515,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q11",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-016", "doc-030", "doc-027"],
+            "contextTokens": 532,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q12",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-026"],
+            "contextTokens": 593,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q13",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021"],
+            "contextTokens": 477,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q14",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-010", "doc-002"],
+            "contextTokens": 529,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q15",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-017", "doc-024"],
+            "contextTokens": 565,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q16",
+            "type": "single",
+            "hit": true,
+            "contextDocIds": ["doc-008", "doc-017"],
+            "contextTokens": 443,
+            "usedUnits": 3,
+            "bestRank": 1
+          },
+          {
+            "id": "q17",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-022", "doc-021", "doc-011"],
+            "contextTokens": 501,
+            "usedUnits": 3,
+            "bestRank": 2
+          },
+          {
+            "id": "q18",
+            "type": "multi",
+            "hit": true,
+            "contextDocIds": ["doc-029", "doc-014"],
+            "contextTokens": 466,
+            "usedUnits": 2,
+            "bestRank": 2
+          },
+          {
+            "id": "q19",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-009", "doc-005"],
+            "contextTokens": 454,
+            "usedUnits": 2,
+            "bestRank": 21
+          },
+          {
+            "id": "q20",
+            "type": "none",
+            "hit": false,
+            "contextDocIds": ["doc-005", "doc-001"],
+            "contextTokens": 512,
+            "usedUnits": 2,
+            "bestRank": 21
+          }
+        ]
+      }
+    ]
+  },
+  "summaryIndex": {
+    "name": "摘要索引（先定位 3 篇再细检索）",
+    "chunkCount": 134,
+    "indexTokens": 6545,
+    "recall": 0.875,
+    "recallSingle": 1,
+    "recallMulti": 0.5,
+    "avgBestRank": 3.63,
+    "ndcg": 0.6975,
+    "avgContextTokens": 517,
+    "avgUsedUnits": 3.2,
+    "perQuestion": [
+      {
+        "id": "q01",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-002", "doc-005"],
+        "contextTokens": 599,
+        "usedUnits": 3,
+        "bestRank": 1
+      },
+      {
+        "id": "q02",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-012", "doc-006"],
+        "contextTokens": 478,
+        "usedUnits": 3,
+        "bestRank": 1
+      },
+      {
+        "id": "q03",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-020"],
+        "contextTokens": 553,
+        "usedUnits": 5,
+        "bestRank": 1
+      },
+      {
+        "id": "q04",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-006", "doc-024"],
+        "contextTokens": 507,
+        "usedUnits": 3,
+        "bestRank": 1
+      },
+      {
+        "id": "q05",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-009", "doc-004"],
+        "contextTokens": 568,
+        "usedUnits": 4,
+        "bestRank": 1
+      },
+      {
+        "id": "q06",
+        "type": "multi",
+        "hit": false,
+        "contextDocIds": ["doc-013", "doc-018", "doc-022"],
+        "contextTokens": 553,
+        "usedUnits": 4,
+        "bestRank": 21
+      },
+      {
+        "id": "q07",
+        "type": "multi",
+        "hit": false,
+        "contextDocIds": ["doc-029", "doc-026"],
+        "contextTokens": 392,
+        "usedUnits": 2,
+        "bestRank": 21
+      },
+      {
+        "id": "q08",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-018", "doc-021", "doc-002"],
+        "contextTokens": 531,
+        "usedUnits": 4,
+        "bestRank": 1
+      },
+      {
+        "id": "q09",
+        "type": "none",
+        "hit": false,
+        "contextDocIds": ["doc-009", "doc-005"],
+        "contextTokens": 499,
+        "usedUnits": 2,
+        "bestRank": 21
+      },
+      {
+        "id": "q10",
+        "type": "none",
+        "hit": false,
+        "contextDocIds": ["doc-001"],
+        "contextTokens": 440,
+        "usedUnits": 2,
+        "bestRank": 21
+      },
+      {
+        "id": "q11",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-016", "doc-018", "doc-019"],
+        "contextTokens": 561,
+        "usedUnits": 3,
+        "bestRank": 1
+      },
+      {
+        "id": "q12",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-026"],
+        "contextTokens": 502,
+        "usedUnits": 3,
+        "bestRank": 1
+      },
+      {
+        "id": "q13",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-022", "doc-021"],
+        "contextTokens": 542,
+        "usedUnits": 4,
+        "bestRank": 1
+      },
+      {
+        "id": "q14",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-010", "doc-002"],
+        "contextTokens": 566,
+        "usedUnits": 4,
+        "bestRank": 1
+      },
+      {
+        "id": "q15",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-017", "doc-024"],
+        "contextTokens": 488,
+        "usedUnits": 3,
+        "bestRank": 1
+      },
+      {
+        "id": "q16",
+        "type": "single",
+        "hit": true,
+        "contextDocIds": ["doc-008", "doc-026"],
+        "contextTokens": 574,
+        "usedUnits": 4,
+        "bestRank": 1
+      },
+      {
+        "id": "q17",
+        "type": "multi",
+        "hit": true,
+        "contextDocIds": ["doc-022", "doc-021", "doc-026"],
+        "contextTokens": 496,
+        "usedUnits": 3,
+        "bestRank": 2
+      },
+      {
+        "id": "q18",
+        "type": "multi",
+        "hit": true,
+        "contextDocIds": ["doc-029", "doc-014"],
+        "contextTokens": 569,
+        "usedUnits": 3,
+        "bestRank": 2
+      },
+      {
+        "id": "q19",
+        "type": "none",
+        "hit": false,
+        "contextDocIds": ["doc-005", "doc-009"],
+        "contextTokens": 395,
+        "usedUnits": 2,
+        "bestRank": 21
+      },
+      {
+        "id": "q20",
+        "type": "none",
+        "hit": false,
+        "contextDocIds": ["doc-022", "doc-010"],
+        "contextTokens": 528,
+        "usedUnits": 3,
+        "bestRank": 21
+      }
+    ]
+  },
+  "routeProbe": [
+    {
+      "label": "② 标题路径（D9 基线）",
+      "uniqueRatio": 0.0575,
+      "usefulQuestions": 0
+    },
+    {
+      "label": "③ 上下文块头",
+      "uniqueRatio": 0.06,
+      "usefulQuestions": 0
+    }
+  ],
+  "cost": {
+    "build": {
+      "chunkCount": 134,
+      "naiveInputTokens": 77477,
+      "cacheWriteTokens": 17340,
+      "cacheReadTokens": 60137,
+      "freshInputTokens": 25540,
+      "outputTokens": 13400,
+      "embedTokens": 22339,
+      "naiveUsd": 0.51049778,
+      "cachedUsd": 0.36113288,
+      "savedRatio": 0.2925867767730548
+    },
+    "queryBase": {
+      "queryEmbedTokens": 32,
+      "rerankTokens": 2692,
+      "genInTokens": 771,
+      "genOutTokens": 300,
+      "usd": 0.014889639999999999
+    },
+    "queryHeaded": {
+      "queryEmbedTokens": 32,
+      "rerankTokens": 3340,
+      "genInTokens": 732,
+      "genOutTokens": 300,
+      "usd": 0.01671664
+    }
+  }
+}

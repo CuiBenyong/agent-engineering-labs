@@ -1,0 +1,26 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: rag14-day05-pg
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: rag
+      POSTGRES_DB: rag05
+    # 建 HNSW 索引时并行 worker 走共享内存，Docker 默认只给 64MB，
+    # 不加这一行会在 CREATE INDEX 时报 could not resize shared memory segment
+    shm_size: 1gb
+    ports:
+      # 天号 55：PostgreSQL = 5500 + 55
+      - '5555:5432'
+    command:
+      - postgres
+      # 建 HNSW 图时装不下 maintenance_work_mem 会慢一个量级，这里给足
+      - '-c'
+      - 'maintenance_work_mem=512MB'
+      - '-c'
+      - 'shared_buffers=512MB'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U rag -d rag05']
+      interval: 3s
+      timeout: 3s
+      retries: 20

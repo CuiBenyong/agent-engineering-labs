@@ -1,0 +1,25 @@
+# D14 综合项目用的 PostgreSQL 16 + pgvector。端口按课程口径取 5500 + 天号（D14 的天号是 64）。
+# 起停：docker compose up -d / docker compose down -v
+#
+# 不用它也能跑完整个项目：没有 DATABASE_URL 时索引走内存实现，语义与 SQL 版一致
+# （同一批向量、同一个租户范围，排出来的名次必须逐条相同——自测第七项就在验这件事）。
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: rag14-day14-pg
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: rag
+      POSTGRES_DB: rag
+    ports:
+      - '5564:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U rag -d rag']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

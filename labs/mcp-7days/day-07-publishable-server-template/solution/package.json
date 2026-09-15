@@ -1,0 +1,30 @@
+{
+  "name": "@your-username/mcp-docs-server",
+  "version": "1.0.0",
+  "mcpName": "io.github.your-username/docs",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "mcp-docs-server": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "server.json"
+  ],
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "eval": "EVAL=1 tsx src/index.ts",
+    "build": "tsc -p tsconfig.build.json && cp -R src/evals dist/evals",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

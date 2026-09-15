@@ -1,0 +1,20 @@
+{
+  "tool": "claude-code",
+  "startCommit": "a1b2c3d",
+  "task": "给 TODO API 补输入校验与单元测试",
+  "promptChars": 142,
+  "instructionsChars": 389,
+  "approvals": {
+    "count": 4,
+    "reasons": [
+      "写 src/schemas/todo.ts",
+      "写 test/todo.test.ts",
+      "运行 pnpm test",
+      "运行 pnpm test（第二次）"
+    ]
+  },
+  "verification": { "ranTests": true, "testsPassed": 11, "testsFailed": 0, "fixedOnRed": true },
+  "cost": { "minutes": 6.8, "inputTokens": 61900, "outputTokens": 5400 },
+  "filesChanged": 4,
+  "review": { "comments": 4, "accepted": 3 }
+}

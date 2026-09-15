@@ -1,0 +1,12 @@
+{
+  "tool": "codex",
+  "startCommit": "a1b2c3d",
+  "task": "给 TODO API 补输入校验与单元测试",
+  "promptChars": 142,
+  "instructionsChars": 389,
+  "approvals": { "count": 1, "reasons": ["npm install zod 需要联网"] },
+  "verification": { "ranTests": true, "testsPassed": 9, "testsFailed": 0, "fixedOnRed": true },
+  "cost": { "minutes": 7.5, "inputTokens": 48200, "outputTokens": 6100 },
+  "filesChanged": 3,
+  "review": { "comments": 3, "accepted": 2 }
+}

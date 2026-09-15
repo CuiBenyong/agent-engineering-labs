@@ -1,0 +1,18 @@
+# 真实版依赖：带 pgvector 扩展的 Postgres。
+# docker compose up -d 之后，去掉 MOCK=1 并设置：
+#   DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5512/agent_memory
+# 跑的是同一份业务代码，差别只在 src/infra/ 里换了一个 Store 实现。
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: agent_memory
+    # 端口 = 5500 + 天号，避开课程主仓库的 5433 与其他天的实验容器
+    ports:
+      - '5512:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d agent_memory']
+      interval: 5s
+      timeout: 3s
+      retries: 10

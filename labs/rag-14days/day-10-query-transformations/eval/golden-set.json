@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q01",
+    "question": "开启单点登录之后，成员还能不能用密码登录？",
+    "answerDocIds": ["doc-002"],
+    "type": "single"
+  },
+  {
+    "id": "q02",
+    "question": "出差住在一线城市，每晚住宿费的报销上限是多少？",
+    "answerDocIds": ["doc-012"],
+    "type": "single"
+  },
+  {
+    "id": "q03",
+    "question": "生产发布的灰度分几批放量？每一批要观察多久？",
+    "answerDocIds": ["doc-020"],
+    "type": "single"
+  },
+  {
+    "id": "q04",
+    "question": "网盘单个文件最大能上传多大？",
+    "answerDocIds": ["doc-006", "doc-024"],
+    "type": "single"
+  },
+  {
+    "id": "q05",
+    "question": "离线编辑的文档同步回来时，同一段内容被别人改过，系统会怎么处理？",
+    "answerDocIds": ["doc-009"],
+    "type": "single"
+  },
+  {
+    "id": "q06",
+    "question": "生产数据库主备切换必须由谁书面审批？这个人叫什么名字？",
+    "answerDocIds": ["doc-019", "doc-014"],
+    "type": "multi"
+  },
+  {
+    "id": "q07",
+    "question": "把搜索索引的消费者从 4 个扩到 8 个，要走哪个流程、最晚提前几个工作日提单？",
+    "answerDocIds": ["doc-029", "doc-021"],
+    "type": "multi"
+  },
+  {
+    "id": "q08",
+    "question": "权限判定结果的缓存有效期是多久？成员权限变更时怎么处理？",
+    "answerDocIds": ["doc-018"],
+    "type": "single"
+  },
+  {
+    "id": "q09",
+    "question": "桌面同步客户端支持哪些操作系统？对系统版本有什么最低要求？",
+    "answerDocIds": [],
+    "type": "none"
+  },
+  {
+    "id": "q10",
+    "question": "云梯协作公有云的服务可用性承诺是百分之多少？",
+    "answerDocIds": [],
+    "type": "none"
+  },
+  {
+    "id": "q11",
+    "question": "年假当年没休完最多能结转几天到次年？结转的部分最晚什么时候要休完？",
+    "answerDocIds": ["doc-016", "doc-030"],
+    "type": "single"
+  },
+  {
+    "id": "q12",
+    "question": "企业版客户提交的紧急工单，首次响应时效承诺是多久？",
+    "answerDocIds": ["doc-026"],
+    "type": "single"
+  },
+  {
+    "id": "q13",
+    "question": "生产日志和审计日志分别保留多久？",
+    "answerDocIds": ["doc-022"],
+    "type": "single"
+  },
+  {
+    "id": "q14",
+    "question": "开放 API 的个人访问令牌默认有效期多长？创建时能不能设置得比默认更长？",
+    "answerDocIds": ["doc-010"],
+    "type": "single"
+  },
+  {
+    "id": "q15",
+    "question": "内部服务之间的同步调用超时设成了多少秒？失败之后重试几次、对哪些接口重试？",
+    "answerDocIds": ["doc-017"],
+    "type": "single"
+  },
+  {
+    "id": "q16",
+    "question": "全量数据导出包的下载链接有效期是多久？同一个工作区 24 小时内最多能发起几次全量导出？",
+    "answerDocIds": ["doc-008"],
+    "type": "single"
+  },
+  {
+    "id": "q17",
+    "question": "把某个工作区的链路追踪采样率临时调到 100%，属于几级变更？按规范最晚要提前几个工作日提单？",
+    "answerDocIds": ["doc-022", "doc-021"],
+    "type": "multi"
+  },
+  {
+    "id": "q18",
+    "question": "质量保障组的组长是谁？他在最近一次架构评审会上被派了什么行动项？",
+    "answerDocIds": ["doc-014", "doc-029"],
+    "type": "multi"
+  },
+  {
+    "id": "q19",
+    "question": "网页端支持哪些浏览器？对浏览器版本有什么最低要求？",
+    "answerDocIds": [],
+    "type": "none"
+  },
+  {
+    "id": "q20",
+    "question": "私有化部署对服务器的最低硬件配置有什么要求？需要多少 CPU 和内存？",
+    "answerDocIds": [],
+    "type": "none"
+  }
+]

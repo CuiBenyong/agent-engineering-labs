@@ -1,0 +1,7 @@
+# node_modules 必须排除：宿主机装的是 macOS/Windows 的二进制，拷进 Linux 容器直接跑不起来，
+# 而且它会让构建上下文从几百 KB 涨到几百 MB
+node_modules
+# .env 里是真 key，打进镜像就等于把密钥发给每一个能 docker pull 的人。
+# 运行时用 docker run -e 或 --env-file 传进去。
+.env
+*.log

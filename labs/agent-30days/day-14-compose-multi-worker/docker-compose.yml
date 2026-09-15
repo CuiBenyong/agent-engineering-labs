@@ -1,0 +1,85 @@
+# D14：一个镜像，四个服务，worker 三个副本。
+#
+#   docker compose up -d --build          # 起 postgres + redis + gateway + 3 个 worker
+#   docker compose ps                     # 能看到 worker-1 / worker-2 / worker-3
+#   curl -s localhost:3014/admin/workers  # 心跳面板：三个副本，最后心跳时间
+#   docker compose up -d --scale worker=5 # 副本数改成 5，其余服务不动
+#   docker compose stop worker            # 观察优雅停机：日志里先「停止取新消息」再退出
+#   docker compose down -v                # 收工，连数据卷一起删
+#
+# 宿主端口按本周口径「基数 + 天号」取：Postgres 5514、Redis 6514、Gateway 3014。
+# 想让 compose 跑你自己写的那份，把两处 build 的 ./solution 改成 ./starter。
+name: day14-compose-multi-worker
+
+x-app: &app
+  build: ./solution
+  environment: &app-env
+    APP_ENV: dev
+    APP_VERSION: v1
+    # 容器之间走服务名和容器内端口，宿主机那两个映射端口只给你自己连
+    REDIS_URL: redis://redis:6379
+    DATABASE_URL: postgres://koda:koda@postgres:5432/koda
+  depends_on:
+    postgres:
+      # 等的是「能用了」，不是「起来了」——D8 那个抢跑的坑
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  # 比代码里的 20 秒宽限多留 5 秒：宽限期必须小于这个值，
+  # 否则 compose 先 SIGKILL，优雅停机的最后几步（交还租约、注销心跳）永远走不完
+  stop_grace_period: 25s
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: koda
+      POSTGRES_PASSWORD: koda
+      POSTGRES_DB: koda
+    ports:
+      - '5514:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U koda -d koda']
+      interval: 2s
+      timeout: 3s
+      retries: 15
+    volumes:
+      - day14-pg:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6514:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  gateway:
+    <<: *app
+    environment:
+      <<: *app-env
+      ROLE: gateway
+    ports:
+      - '3014:3014'
+    healthcheck:
+      # 探的是就绪端点，而它只查本进程必需的依赖，不查 worker 的心跳——
+      # 否则一个 worker 失联会让所有 gateway 一起被摘掉
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3014/healthz']
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  worker:
+    <<: *app
+    environment:
+      <<: *app-env
+      ROLE: worker
+    # 三个副本共用同一份环境变量，所以消费者名字不能写在 env 里：
+    # 代码里默认取容器主机名（每个副本各不相同），见 src/index.ts
+    deploy:
+      replicas: 3
+
+volumes:
+  day14-pg:

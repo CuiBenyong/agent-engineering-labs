@@ -1,0 +1,8 @@
+{
+  "version": "v2.4.0",
+  "releaseDate": "2026-09-06",
+  "owner": "平台组",
+  "endpointCount": 7,
+  "hasBreaking": true,
+  "rollback": "回滚到 v2.3.2 的镜像，数据库迁移可向后兼容，无需回退。"
+}

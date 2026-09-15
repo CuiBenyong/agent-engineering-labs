@@ -1,0 +1,48 @@
+name: claude-review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write # 只给「评论 PR」的权限，不给写代码的权限
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 需要 main 的历史才能 git diff main
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Claude Code
+        run: curl -fsSL https://claude.ai/install.sh | bash && echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Run review
+        working-directory: labs/claude-mastery/day-05-headless-ci/solution
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # 密钥只从 secrets 来
+          BASE_REF: origin/${{ github.base_ref }}
+          MAX_TURNS: '6'
+          MAX_BUDGET_USD: '0.50'
+        run: |
+          pnpm install --ignore-workspace
+          pnpm start   # 失败（出错 / 超预算 / 截断）时以非零退出，让这一步变红
+
+      - name: Comment on PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f=labs/claude-mastery/day-05-headless-ci/solution/review.json
+          if [ -f "$f" ]; then
+            jq -r '.result // "（没有 result 字段）"' "$f" | gh pr comment "${{ github.event.pull_request.number }}" --body-file -
+          fi
