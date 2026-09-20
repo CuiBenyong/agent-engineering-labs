@@ -62,8 +62,6 @@ A few concrete examples of things the code alone won't tell you:
 - Why any security defense that reports only ASR is untrustworthy (an agent that does nothing has an ASR of 0)
 - Why "one setState per delta" produces no render storm under a local mock (React 18 automatic batching — measured: 174 deltas caused 6 renders)
 
-The courses are **free for a limited time right now** — no payment, no sign-up.
-
 ## Index
 
 [INDEX.en.md](./INDEX.en.md) — all 129 labs grouped by course, each linked to its chapter.
