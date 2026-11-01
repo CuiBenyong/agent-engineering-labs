@@ -1,0 +1,18 @@
+# Day 2 example solution: independent verification
+
+This is a **fictional paper simulation**. No person or institution was contacted, and no real payment occurred. The table separates observations, unverified claims, and planned actions; other answers consistent with these principles are valid.
+
+| Case | Direct observation | Unverified claim or unknown | Simulated next action |
+| --- | --- | --- | --- |
+| C1 | Grace hears a voice like Theo's and a request for secrecy; another caller asks for gift cards and their numbers. | Whether it is Theo, whether an accident happened, and the claimed lawyer's identity are unverified. | Buy no cards and read out no numbers; end the conversation. Call Theo using his previously saved contact; if he does not answer, contact Mei or another informed relative. If someone may be in immediate physical danger, contact local emergency services immediately; family checks may happen in parallel. |
+| C2 | A text asks for US$1.99 within 12 hours and contains a link. | Whether there is a parcel, a genuine fee, and who controls the link are unverified. | Do not click, pay, or enter card details. Check the established official delivery app or an independently verified company channel and tell a trusted person. Even an official confirmation of a parcel does not validate the text's link. |
+| C3 | Grace sees an unfamiliar charge; a person reached through a search advert requests a “safe account” transfer and one-time code. | The reason for the charge, the person's identity, whether the account was compromised, and the claimed protection from transferring remain unknown. | End the conversation; transfer nothing and do not read out the code. Use the card-back number or an independently verified official bank channel to ask about the unfamiliar charge and report the unverified support interaction; tell Mei. |
+| C4 | A message displayed as Theo's saved number asks for a recipe photo; no payment, code, secrecy, or deadline is observed. | Whether the sender is Theo and whether the photo reveals private details are unverified. | Relatively lower risk does not prove safety: a number can be spoofed. Check the photo for private information and decide whether to share; independently contact Theo or Mei if the request is unusual or uncertain. |
+
+When Theo does not answer, that proves neither that he is safe nor that the caller's story is true. Continue with a trusted backup person or institution and mark the issue “unverified”; do not return to a caller-supplied number, message link, or advert. A family code word is only an extra clue and may have leaked; it does not establish identity by itself.
+
+## Mainland China family hypothesis
+
+The fictional mother says, “I will check through my own channels; I will not pay on this call.” She ends the call, does not transfer, and contacts her daughter using a previously saved contact; if unanswered she tries a trusted backup relative. The claimed accident remains unverified, but danger cannot be ruled out: if immediate physical danger is possible, she immediately contacts local emergency services through a trusted route. She can call **110** when police assistance is needed and **120** for emergency medical assistance, explaining what is known and unknown; she does not wait for a code word or ten minutes. Family members can help verify in parallel.
+
+In mainland China, **110** is for police reporting and **120** is for emergency medical assistance. **96110** supports anti-fraud warnings, consultation, and fraud-tip reporting; it does not replace 110 or emergency assistance. The example describes a plan only; no call was made.
